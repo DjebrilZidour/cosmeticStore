@@ -48,7 +48,7 @@ function App() {
         className="flex flex-col justify-center items-center w-full mt-12"
       >
         <h1 className="text-2xl text-red-500 p-4 uppercase bold">shop now </h1>
-        <div className="border-2 flex-col justify-center items-center">
+        <div className=" flex-col justify-center items-center">
           <Products />
         </div>
       </div>
