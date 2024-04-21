@@ -6,7 +6,7 @@ const products = [
     desc: "Ne laissez pas les imperfections vous empêcher de rayonner! Adoptez notre Soin Effaclar K+ de La Roche-Posay dès aujourd'hui et retrouvez une peau saine et équilibrée.",
     img: "https://i.ibb.co/PG5rLjQ/3-copy-2.png",
     star: "https://cdn-icons-png.flaticon.com/128/10801/10801392.png",
-    oldPrice: "3200 DZD",
+    oldPrice: "",
     price: "3900 DZD",
     link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/la-rosheposay-effaclar-k",
   },
