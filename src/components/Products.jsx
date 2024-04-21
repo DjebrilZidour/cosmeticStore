@@ -1,4 +1,5 @@
 import ProductCard from "./ProductCard";
+import { Link } from "react-scroll";
 
 const products = [
   {
