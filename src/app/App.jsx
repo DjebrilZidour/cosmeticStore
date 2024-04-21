@@ -10,7 +10,7 @@ function App() {
       <SecNav />
 
       <div
-        id="#home"
+        id="home"
         className="flex justify-center items-center flex-col gap-8 w-full "
       >
         <div className="font-serif gap-8 mx-4 flex flex-col-reverse items-center justify-center lg:flex-row">
@@ -47,11 +47,11 @@ function App() {
       </div>
 
       <div
-        id="#shop"
+        
         className="flex flex-col justify-center items-center w-full my-12"
       >
-        <h1 className="text-2xl text-red-500 p-4 uppercase bold">shop now </h1>
-        <div className=" flex-col justify-center items-center">
+        <h1 className="text-2xl text-red-500 p-4 uppercase bold" id="shop">shop now </h1>
+        <div className=" flex-col justify-center items-center" >
           <Products />
         </div>
       </div>

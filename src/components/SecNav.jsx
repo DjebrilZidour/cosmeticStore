@@ -4,9 +4,9 @@ const SecNav = ()=>{
         <section className="flex justify-center items-center w-full my-8">
 
             <ul className="flex justify-center items-center gap-4 text-xl text-gray  border-b rounded-full shadow-lg">
-                <li id="home" className="cursor-pointer font-serif border-white p-4 rounded-full hover:bg-red-100"><Link to="home" spy={true} smooth={true} offset={50} duration={500}>Home</Link></li>
-                <li id="shop" className="cursor-pointer font-serif border-white p-4 rounded-full hover:bg-red-100"><Link to="shop" spy={true} smooth={true} offset={50} duration={500}>Shop</Link></li>
-                <li id="about" className="cursor-pointer font-serif border-white p-4 rounded-full hover:bg-red-100"><Link to="about" spy={true} smooth={true} offset={50} duration={500}>About</Link></li>
+                <li className="cursor-pointer font-serif border-white p-4 rounded-full hover:bg-red-100"><Link to="home" spy={true} smooth={true} offset={50} duration={500}>Home</Link></li>
+                <li className="cursor-pointer font-serif border-white p-4 rounded-full hover:bg-red-100"><Link to="shop" spy={true} smooth={true} offset={50} duration={500}>Shop</Link></li>
+                <li className="cursor-pointer font-serif border-white p-4 rounded-full hover:bg-red-100"><Link to="about" spy={true} smooth={true} offset={50} duration={500}>About</Link></li>
                 
                 
                 
