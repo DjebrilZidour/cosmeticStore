@@ -30,7 +30,7 @@ function App() {
           <div className=" flex justify-center items-center">
             <img
               className="w-72 rounded-3xl"
-              src="https://images.pexels.com/photos/3762875/pexels-photo-3762875.jpeg?auto=compress&cs=tinysrgb&w=600"
+              src="https://images.pexels.com/photos/3762876/pexels-photo-3762876.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
               alt=""
             />
           </div>
