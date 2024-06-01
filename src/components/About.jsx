@@ -14,28 +14,7 @@ const About = () => {
       <div className="flex justify-center items-center lg:items-start flex-col w-full p-2 gap-8 lg:w-1/3">
         <h1 className="text-3xl text-red-500 capitalize">why chose us</h1>
         <p className="w-full">
-          Bienvenue sur Djazirat El Marra, votre destination ultime pour les
-          produits de soins de la peau de qualité supérieure en Algérie. Chez
-          Djazirat El Marra, nous croyons au pouvoir des soins de la peau pour
-          transformer et sublimer votre beauté naturelle. Notre sélection
-          soigneusement élaborée de produits de soins de la peau de haute
-          qualité provenant de marques renommées telles que The Ordinary, La
-          Roche-Posay, Cerave et Avene est conçue pour répondre à tous vos
-          besoins en matière de soins de la peau. Avec un engagement envers
-          l'excellence, nous nous efforçons de fournir à nos clients les
-          meilleures solutions de soins de la peau adaptées à leurs
-          préoccupations individuelles. Que vous cherchiez à combattre l'acné, à
-          hydrater la peau sèche ou à obtenir un teint éclatant, nous avons ce
-          qu'il vous faut. Chez Djazirat El Marra, la satisfaction du client est
-          notre priorité absolue. Nous proposons une livraison rapide et fiable
-          dans les 58 wilayas d'Algérie, garantissant que vous recevez vos
-          produits de soins de la peau de manière pratique et sans tracas. Notre
-          équipe est dévouée à fournir un service client exceptionnel et à vous
-          assister à chaque étape du processus. Rejoignez-nous dans un voyage
-          vers une peau plus saine et plus heureuse avec Djazirat El Marra.
-          Explorez notre large gamme de produits de soins de la peau, découvrez
-          votre routine de soins de la peau parfaite et lancez-vous sur le
-          chemin d'une peau éclatante dès aujourd'hui
+        Bienvenue sur Djazirat El Marra, votre destination pour des soins de la peau de qualité supérieure en Algérie. Nous proposons des produits de marques renommées comme The Ordinary, La Roche-Posay, Cerave et Avene, répondant à tous vos besoins de soins de la peau. Que vous luttiez contre l'acné, la peau sèche ou cherchiez un teint éclatant, nous avons ce qu'il vous faut. Profitez de notre livraison rapide dans les 58 wilayas et d'un service client exceptionnel. Découvrez votre routine parfaite et embarquez pour un voyage vers une peau plus saine et radieuse avec Djazirat El Marra.
         </p>
         <button className="border-2 p-4"><Link to="shop" spy={true} smooth={true} offset={50} duration={500}>Back to shop</Link></button>
       </div>
