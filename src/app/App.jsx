@@ -46,23 +46,39 @@ function App() {
         </div>
       </div>
 
-      <div
-        
-        className="flex flex-col justify-center items-center w-full my-12"
-      >
-        <h1 className="text-2xl text-red-500 p-4 uppercase bold" id="shop">shop now </h1>
-        <div className=" flex-col justify-center items-center" >
+      <div className="flex flex-col justify-center items-center w-full my-12">
+        <h1 className="text-2xl text-red-500 p-4 uppercase bold" id="shop">
+          shop now{" "}
+        </h1>
+        <div className=" flex-col justify-center items-center">
           <Products />
         </div>
       </div>
 
-     <div className="flex flex-col justify-center items-center my-12">
+      <div className="flex flex-col justify-center items-center my-12">
         <h1 className="text-2xl text-red-500 p-4 uppercase bold">About</h1>
-        <div>
-          <About />
-        </div>
-      </div> 
+        <div className="flex lg:flex-row-reverse  items-center  justify-center lg:mx-12 flex-col">
 
+        <div className="lg:w-1/2 w-full flex justify-center items-center">
+            <img src="https://i.ibb.co/Mp4BBHb/logo-Djazirat-El-Marra-1.png" className="rounded-full w-1/2" alt="" />
+          </div>
+
+          <div className="flex flex-col items-center justify-center lg:items-start lg:w-1/2 gap-8 my-8 mx-4">
+            <h1 className="text-4xl text-red-500 capitalize">why chose us</h1>
+            <p className="text-center lg:text-start">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora
+              temporibus quia minima, voluptatum unde laudantium. Illo accusamus
+              animi recusandae? Mollitia ut aliquam eaque animi, exercitationem
+              laboriosam doloremque, facere sequi assumenda deleniti vitae,
+              harum dignissimos. Reiciendis praesentium dolorem distinctio
+              repellat perferendis tenetur quam voluptas nisi quisquam atque,
+              aliquam minima velit laudantium?
+            </p>
+            <button></button>
+          </div>
+          
+        </div>
+      </div>
     </section>
   );
 }

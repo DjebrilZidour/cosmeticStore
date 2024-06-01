@@ -1,16 +1,17 @@
+import { Link } from "react-scroll";
 const About = () => {
   return (
-    <section id="about" className=" flex-col justify-center items-center gap-4 m-4 p-4   md:flex-reverse">
+    <section id="about" className=" flex-col justify-center items-center gap-4 m-4 p-4 my-12 lg:flex-row  lg:flex-reverse">
 
-      <div className="w-full flex justify-center items-center md:w-1/2">
+      <div className="w-full flex justify-center items-center lg:w-1/3">
         <img
-          className="rounded-full w-1/2"
+          className="rounded-full w-full"
           src="https://i.ibb.co/Mp4BBHb/logo-Djazirat-El-Marra-1.png"
           alt=""
         />
       </div>
 
-      <div className="flex justify-center items-center lg:items-start flex-col w-full p-2 gap-8 lg:w-1/2">
+      <div className="flex justify-center items-center lg:items-start flex-col w-full p-2 gap-8 lg:w-1/3">
         <h1 className="text-3xl text-red-500 capitalize">why chose us</h1>
         <p className="w-full">
           Bienvenue sur Djazirat El Marra, votre destination ultime pour les
@@ -36,7 +37,7 @@ const About = () => {
           votre routine de soins de la peau parfaite et lancez-vous sur le
           chemin d'une peau éclatante dès aujourd'hui
         </p>
-        <button className="border-2 p-4">Back to shop</button>
+        <button className="border-2 p-4"><Link to="shop" spy={true} smooth={true} offset={50} duration={500}>Back to shop</Link></button>
       </div>
      
     </section>
