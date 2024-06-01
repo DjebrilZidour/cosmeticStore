@@ -10,7 +10,7 @@ const About = () => {
         />
       </div>
 
-      <div className="flex justify-center items-start flex-col w-full p-8 gap-8 lg:w-1/2">
+      <div className="flex justify-center items-center lg:items-start flex-col w-full p-2 gap-8 lg:w-1/2">
         <h1 className="text-3xl text-red-500 capitalize">why chose us</h1>
         <p className="w-full">
           Bienvenue sur Djazirat El Marra, votre destination ultime pour les
