@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar";
 import SecNav from "../components/SecNav";
 import Products from "../components/Products";
+import { Link } from "react-scroll";
 import About from "../components/About";
 
 function App() {
@@ -74,7 +75,7 @@ function App() {
               repellat perferendis tenetur quam voluptas nisi quisquam atque,
               aliquam minima velit laudantium?
             </p>
-            <button></button>
+            <button className="border px-4 py-2 rounded-xl hover:bg-red-100"><Link to="shop" spy={true} smooth={true} offset={50} duration={500}>Back To Shop</Link></button>
           </div>
           
         </div>
