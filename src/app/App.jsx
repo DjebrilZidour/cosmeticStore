@@ -56,7 +56,7 @@ function App() {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center my-12">
+      <div id="about" className="flex flex-col justify-center items-center my-12">
         <h1 className="text-2xl text-red-500 p-4 uppercase bold">About</h1>
         <div className="flex lg:flex-row-reverse  items-center  justify-center lg:mx-12 flex-col">
 
