@@ -21,7 +21,30 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  gtag('event', 'purchase', {
+    'transaction_id': 't_12345',
+    'currency': 'USD',
+    'value': 1.23,
+    user_data: {
+       email_address: 'johnsmith@email.com',
+       phone_number: '1234567890',
+       address: {
+          first_name: 'john',
+          last_name: 'smith',
+          city: 'menlopark',
+          region: 'ca',
+          postal_code: '94025',
+          country: 'usa',
+       },
+    },
+    items: [{
+       item_name: 'foo',
+       quantity: 5,
+       price: 123.45,
+       item_category: 'bar',
+       item_brand : 'baz',
+     }],
+ });
 
   gtag('config', 'G-JTT7GXXTVV');
 </script>
