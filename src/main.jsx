@@ -16,10 +16,7 @@ const router = createBrowserRouter([
     path: "/La-roshe-posay-cicaplast-baume-b5spf50",
     element: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/la-roshe-posay-cicaplast-baume-b5",
   },
-  {
-    path: "/",
-    element: <App />,
-  },
+ 
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
