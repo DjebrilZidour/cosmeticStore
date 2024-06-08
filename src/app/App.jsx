@@ -39,10 +39,18 @@ function App() {
 
         <div className="flex justify-center items-center gap-4">
           <button className="border px-4 py-2 rounded-xl hover:bg-red-100">
-            Shop Now
+          <Link
+                to="shop"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+              >
+                 Shop Now
+              </Link>
           </button>
           <button className="border px-4 py-2 rounded-xl hover:bg-red-100">
-            Learn More
+          <Link to="about" spy={true} smooth={true} offset={50} duration={500}>Learn More</Link>
           </button>
         </div>
       </div>
