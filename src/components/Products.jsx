@@ -63,7 +63,7 @@ const products = [
     star: "",
     oldPrice: "3400 DZD",
     price: "2950 DZD",
-    link: "",
+    link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/the-ordinary-niacinamide-10-zinc-1",
   },
 ];
 
