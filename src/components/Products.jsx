@@ -7,8 +7,8 @@ const products = [
     desc: "Ne laissez pas les imperfections vous empêcher de rayonner! Adoptez notre Soin Effaclar K+ de La Roche-Posay dès aujourd'hui et retrouvez une peau saine et équilibrée.",
     img: "https://i.ibb.co/PG5rLjQ/3-copy-2.png",
     star: "https://cdn-icons-png.flaticon.com/128/10801/10801392.png",
-    oldPrice: "",
-    price: "3900 DZD",
+    oldPrice: "4500 DZD",
+    price: "3999 DZD",
     link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/la-rosheposay-effaclar-k",
   },
   {
@@ -25,8 +25,8 @@ const products = [
     desc: "Nettoyant moussant qui favorise l'élimination des rugosités pour une peau lisse",
     img: "https://i.ibb.co/wLC72w8/4.png",
     star: "",
-    oldPrice: "3500 DZD",
-    price: "2999 DZD",
+    oldPrice: "4000 DZD",
+    price: "3500 DZD",
     link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/cerave-gel-nettoyant-antirugosites-236ml",
   },
   {
@@ -61,8 +61,8 @@ const products = [
     desc: "Ne laissez pas les imperfections ternir votre éclat naturel! Adoptez notre Sérum Niacinamide 10% + Zinc 1% de The Ordinary dès aujourd'hui et retrouvez une peau éclatante de santé.",
     img: "https://i.ibb.co/FKtM3WT/1-copy-3.png",
     star: "",
-    oldPrice: "3400 DZD",
-    price: "2950 DZD",
+    oldPrice: "3800 DZD",
+    price: "3450 DZD",
     link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/the-ordinary-niacinamide-10-zinc-1",
   },
 ];
