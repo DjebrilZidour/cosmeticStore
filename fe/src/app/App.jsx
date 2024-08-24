@@ -9,7 +9,13 @@ function App() {
     <section className="scroll-smooth">
       <Navbar />
       <SecNav />
+      <div className="flex justify-center items-center w-full">
 
+      <h1 className="uppercase text-5xl text-center text-red-500">ce site web est en maintenace 
+        <br />on excuse
+      </h1>
+      </div>
+{/* 
       <div
         id="home"
         className="flex justify-center items-center flex-col gap-8 w-full "
@@ -105,7 +111,7 @@ function App() {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
