@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./app/App.jsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import About from "./components/About.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -9,8 +11,8 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/cerave-anti-rugosités-236ml",
-    element: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/cerave-gel-nettoyant-antirugosites-236ml",
+    path: "/about",
+    element: <About />,
   },
   {
     path: "/La-roshe-posay-cicaplast-baume-b5spf50",
