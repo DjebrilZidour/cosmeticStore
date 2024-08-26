@@ -133,17 +133,15 @@ const shippingPrices = {
   };
   
 const SingleProduct = (props) => {
+    const { id, title } = useParams();
+    const product = products.find((p) => p.id === parseInt(id));
+  
+    if (!product) {
+      return <div>Product not found</div>;
+    }
     const {state} = useLocation()
-    let product = {}
-
-if (props.id > 0) {
-    console.log(props.id);
-    product = products.find(product => product.id === props.id )
-
-}else{
-    product = state.props
-}
     
+
 
 
   const [quantity, setQuantity] = useState(1);

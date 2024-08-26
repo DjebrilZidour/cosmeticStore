@@ -1,41 +1,37 @@
-
-
-import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
-
+import { useNavigate } from 'react-router-dom';
 
 const ProductCard = (props) => {
-  const {state} = useLocation()
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+
   return (
-    <div className="flex flex-col justify-center items-center sm:w-full  lg:w-80 border-2 border-black rounded-xl ">
+    <div className="flex flex-col justify-center items-center sm:w-full lg:w-80 border-2 border-black rounded-xl">
       <div className="flex justify-center items-center w-full">
         <img
           className="rounded-xl w-80"
           src={props.img}
-          alt=""
+          alt={props.title}
         />
       </div>
 
-      <div className="p-4 flex flex-col justify-center items-start gap-2 font-serif	h-80 w-80">
-        <h1 className=" text-xl font-serif	">{props.title}</h1>
+      <div className="p-4 flex flex-col justify-center items-start gap-2 font-serif h-80 w-80">
+        <h1 className="text-xl font-serif">{props.title}</h1>
         <p className="text-sm">{props.desc}</p>
-        <div className=" flex flex-col justify-between items-start">
-          <h3 className="decoration-dashed text-xl text-red-600 line-through">{props.oldPrice}</h3>
-          <h2 className="text-2xl text-green-500 font-serif">{props.price} DZD</h2>
+        <div className="flex flex-col justify-between items-start">
+          <h3 className="decoration-dashed text-xl text-red-600 line-through">
+            {props.oldPrice}
+          </h3>
+          <h2 className="text-2xl text-green-500 font-serif">
+            {props.price} DZD
+          </h2>
         </div>
-        <div className="flex justify-center items-center w-full font-serif ">
-       
-          <button onClick={()=>{
-            console.log("clicked product");
-            navigate("/single-product", {
-              state: {
-                props,
-              },})
-          }} className="border-2 px-4 py-2 rounded-lg bg-red-200  hover:bg-red-300 w-2/3 text-black text-lg">
-           
-              Buy now
-           
+        <div className="flex justify-center items-center w-full font-serif">
+          <button
+            onClick={() => {
+              navigate(`/product/${props.id}`); // Pass the product ID in the URL
+            }}
+            className="border-2 px-4 py-2 rounded-lg bg-red-200 hover:bg-red-300 w-2/3 text-black text-lg"
+          >
+            Buy now
           </button>
         </div>
       </div>
