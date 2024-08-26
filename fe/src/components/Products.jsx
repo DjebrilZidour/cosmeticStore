@@ -83,14 +83,15 @@ const Products = () => {
       {products.map((product) => {
         return (
           <ProductCard
-            title={product.title}
-            desc={product.desc}
-            img={product.img}
-            star={product.star}
-            oldPrice={product.oldPrice}
-            price={product.price}
-            link={product.link}
-          />
+          key={product.id}
+          id={product.id}
+          title={product.title}
+          img={product.img}
+          desc={product.desc}
+          oldPrice={product.oldPrice}
+          price={product.price}
+        />
+        
         );
       })}
     </div>

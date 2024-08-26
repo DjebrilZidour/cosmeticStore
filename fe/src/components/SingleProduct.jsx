@@ -1,10 +1,67 @@
 import { Link } from "react-scroll";
 import React, { useState } from "react";
 import Navbar from "./Navbar";
+import { useParams } from "react-router-dom";
 
 import { useLocation } from "react-router-dom";
 
-const products = [
+
+  
+const shippingPrices = {
+    "Alger": 400,
+    "Alger Express": 600,
+    "Blida": 600,
+    "Tipaza": 600,
+    "Boumerdes": 600,
+    "Bouira": 650,
+    "Ain Defla": 800,
+    "Medea": 750,
+    "Chlef": 750,
+    "Tissemsilt": 800,
+    "Tiaret": 800,
+    "Relizane": 800,
+    "Mostaghanem": 800,
+    "Oran": 750,
+    "Mascara": 800,
+    "Ain Temouchent": 800,
+    "Tlemcen": 800,
+    "Sidi Bel Abbes": 800,
+    "Saida": 800,
+    "El Oued": 800,
+    "Biskra": 900,
+    "Ouargla": 900,
+    "El Mghaier": 900,
+    "Ouled Djellal": 900,
+    "El Meniaa": 900,
+    "Timimoun": 950,
+    "Tizi Ouzou": 750,
+    "Bejaia": 750,
+    "Jijel": 800,
+    "Bordj Bou Arreridj": 750,
+    "Sétif": 750,
+    "Batna": 750,
+    "Constantine": 750,
+    "Guelma": 800,
+    "Msila": 850,
+    "Khenchela": 900,
+    "Tebessa": 900,
+    "Oum El Bouaghi": 800,
+    "Mila": 750,
+    "Skikda": 750,
+    "Annaba": 800,
+    "El Tarf": 800,
+    "Souk Ahras": 800,
+    "Laghouat": 900,
+    "Ghardaia": 900,
+    "Djelfa": 900,
+    "Touggourt": 900,
+    "Béchar": 1000,
+    "El-Bayadh": 1000,
+    "Nâama": 1000,
+    "Béni Abbes": 1000,
+    "Adrar": 1100,
+  };
+  const products = [
     {
       id: 1,
       title: "La roshe-posay Effaclar K(+)",
@@ -77,72 +134,9 @@ const products = [
     },
   ];
   
-const shippingPrices = {
-    "Alger": 400,
-    "Alger Express": 600,
-    "Blida": 600,
-    "Tipaza": 600,
-    "Boumerdes": 600,
-    "Bouira": 650,
-    "Ain Defla": 800,
-    "Medea": 750,
-    "Chlef": 750,
-    "Tissemsilt": 800,
-    "Tiaret": 800,
-    "Relizane": 800,
-    "Mostaghanem": 800,
-    "Oran": 750,
-    "Mascara": 800,
-    "Ain Temouchent": 800,
-    "Tlemcen": 800,
-    "Sidi Bel Abbes": 800,
-    "Saida": 800,
-    "El Oued": 800,
-    "Biskra": 900,
-    "Ouargla": 900,
-    "El Mghaier": 900,
-    "Ouled Djellal": 900,
-    "El Meniaa": 900,
-    "Timimoun": 950,
-    "Tizi Ouzou": 750,
-    "Bejaia": 750,
-    "Jijel": 800,
-    "Bordj Bou Arreridj": 750,
-    "Sétif": 750,
-    "Batna": 750,
-    "Constantine": 750,
-    "Guelma": 800,
-    "Msila": 850,
-    "Khenchela": 900,
-    "Tebessa": 900,
-    "Oum El Bouaghi": 800,
-    "Mila": 750,
-    "Skikda": 750,
-    "Annaba": 800,
-    "El Tarf": 800,
-    "Souk Ahras": 800,
-    "Laghouat": 900,
-    "Ghardaia": 900,
-    "Djelfa": 900,
-    "Touggourt": 900,
-    "Béchar": 1000,
-    "El-Bayadh": 1000,
-    "Nâama": 1000,
-    "Béni Abbes": 1000,
-    "Adrar": 1100,
-  };
-  
-const SingleProduct = (props) => {
-    const { id, title } = useParams();
-    const product = products.find((p) => p.id === parseInt(id));
-  
-    if (!product) {
-      return <div>Product not found</div>;
-    }
-    const {state} = useLocation()
-    
-
-
+const SingleProduct = () => {
+    const { id } = useParams();
+    const product = products.find(p => p.id === parseInt(id));
 
   const [quantity, setQuantity] = useState(1);
   const [selectedWilaya, setSelectedWilaya] = useState("");
@@ -394,13 +388,13 @@ const SingleProduct = (props) => {
               </div>
               <div className="flex justify-between mt-2 font-bold text-lg">
                 <span>Total</span>
-                <span>{(state.props.price * quantity )+ shippingPrice} دج</span>
+                <span>{(product.price * quantity )+ shippingPrice} دج</span>
               </div>
             </div>
           </div>
         </div>
         <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0 p-12">
-          <h1 className="text-2xl font-bold text-gray-800">{state.props.title}</h1>
+          <h1 className="text-2xl font-bold text-gray-800">{product.title}</h1>
           <div className="mt-2 flex flex-col justify-center items-start">
             <h3 className="text-red-500 line-through ">
                 {checkOldPrice(product.oldPrice)}

@@ -27,7 +27,9 @@ const ProductCard = (props) => {
         <div className="flex justify-center items-center w-full font-serif">
           <button
             onClick={() => {
-              navigate(`/product/${props.id}`); // Pass the product ID in the URL
+              // Navigate to the product page with id and title in the URL
+              const formattedTitle = props.title.toLowerCase().replace(/\s+/g, '-');
+              navigate(`/products/${props.id}/${formattedTitle}`)
             }}
             className="border-2 px-4 py-2 rounded-lg bg-red-200 hover:bg-red-300 w-2/3 text-black text-lg"
           >
