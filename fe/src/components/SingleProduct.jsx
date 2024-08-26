@@ -313,7 +313,7 @@ const SingleProduct = () => {
               {product.price} دج
             </h2>
           </div>
-          <p className="mt-4 text-gray-600">{product.description}</p>
+          <p className="mt-4 text-gray-600">{product.desc}</p>
 
           {/* Options (if any) */}
           
