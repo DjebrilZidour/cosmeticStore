@@ -134,14 +134,14 @@ const shippingPrices = {
   
 const SingleProduct = (props) => {
     const {state} = useLocation()
-    const product = {}
+    let product = {}
 
 if (props.id > 0) {
     console.log(props.id);
-    
+    product = products.find(product => product.id === props.id )
+
 }else{
     product = state.props
-    
 }
     
 
