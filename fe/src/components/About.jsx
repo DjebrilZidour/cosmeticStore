@@ -124,9 +124,9 @@ const About = () => {
           
           <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0">
             <h1 className="text-2xl font-bold text-gray-800">{product.name}</h1>
-            <div className="mt-2">
-              <span className="text-gray-500 line-through">{product.originalPrice} دج</span>
-              <span className="text-red-500 ml-2 text-xl font-bold">{product.price} دج</span>
+            <div className="mt-2 flex flex-col justify-center items-start">
+              <h3 className="text-red-500 line-through">{product.originalPrice} دج</h3>
+              <h2 className="text-green-500 ml-2 text-xl font-bold">{product.price} دج</h2>
             </div>
             <p className="mt-4 text-gray-600">{product.description}</p>
 
