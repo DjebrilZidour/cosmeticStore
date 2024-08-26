@@ -163,28 +163,28 @@ const SingleProduct = (props) => {
         <div className="md:w-1/2 p-16">
           <div className=" flex flex-col gap-4">
             <div className="flex flex-col justify-center items-center gap-4 ">
-              <img className="w-full" src={handleImgChanger()} alt="" />
+              <img className="rounded-xl w-full" src={handleImgChanger()} alt="" />
               <div className="flex md:justify-between justify-center px-6 gap-4 w-full">
                 <img
-                  className="lg:w-24 md:w-12 w-16 cursor-pointer"
+                  className="rounded-xl lg:w-24 md:w-12 w-16 cursor-pointer"
                   onClick={imgClicked(1)}
                   src="https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
                   alt=""
                 />
                 <img
-                  className="lg:w-24 md:w-12 w-16 cursor-pointer"
+                  className="rounded-xl lg:w-24 md:w-12 w-16 cursor-pointer"
                   onClick={imgClicked(2)}
                   src="https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
                   alt=""
                 />
                 <img
-                  className="lg:w-24 md:w-12 w-16 cursor-pointer"
+                  className="rounded-xl lg:w-24 md:w-12 w-16 cursor-pointer"
                   onClick={imgClicked(3)}
                   src="https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
                   alt=""
                 />
                 <img
-                  className="lg:w-24  md:w-12 w-16 cursor-pointer"
+                  className="rounded-xl lg:w-24  md:w-12 w-16 cursor-pointer"
                   onClick={imgClicked(4)}
                   src="https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
                   alt=""
@@ -192,7 +192,7 @@ const SingleProduct = (props) => {
               </div>
             </div>
           </div>
-          <div className="mt-8 bg-gray-50 p-4 rounded-lg">
+          <div className="mt-8 bg-gray-50 p-4 rounded-lg md:block hidden">
             <h2 className="text-xl font-semibold text-gray-800">
               Order Summary
             </h2>
@@ -225,30 +225,12 @@ const SingleProduct = (props) => {
           <p className="mt-4 text-gray-600">{product.description}</p>
 
           {/* Options (if any) */}
-          <div className="mt-4">
-            <h3 className="text-lg font-semibold">Options:</h3>
-            {/* Add options here if available */}
-          </div>
+          
 
-          <div className="mt-4">
-            <label
-              className="block text-gray-700 font-semibold mb-2"
-              htmlFor="quantity"
-            >
-              Quantity
-            </label>
-            <input
-              type="number"
-              id="quantity"
-              name="quantity"
-              className="w-16 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              value={quantity}
-              onChange={handleQuantityChange}
-              min="1"
-            />
-          </div>
-          <form onSubmit={handleSubmit} className="mt-8">
-            <div className="mb-4">
+         
+          <form onSubmit={handleSubmit} className="mt-2">
+            <div className="flex justify-between  items-center mb-2">
+            <div className="">
               <label
                 className="block text-gray-700 font-semibold mb-2"
                 htmlFor="fullName"
@@ -259,13 +241,32 @@ const SingleProduct = (props) => {
                 type="text"
                 id="fullName"
                 name="fullName"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
                 placeholder="Enter your full name"
                 value={formData.fullName}
                 onChange={handleInputChange}
                 required
               />
             </div>
+            <div className="">
+            <label
+              className="block text-gray-700 font-semibold mb-2"
+              htmlFor="quantity"
+            >
+              Quantity
+            </label>
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              className="w-16 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+              value={quantity}
+              onChange={handleQuantityChange}
+              min="1"
+            />
+          </div>
+            </div>
+            
             <div className="mb-4">
               <label
                 className="block text-gray-700 font-semibold mb-2"
@@ -278,7 +279,7 @@ const SingleProduct = (props) => {
                 id="phoneNumber"
                 name="phoneNumber"
                 pattern="^ *(0|\+ *2 *1 *3) *((5|6|7) *(\d *){8}|(4 *9|2 *7|2 *9|3 *2|3 *3|3 *4|2 *5|2 *6|3 *7|4 *3|4 *6|2 *1|2 *3|3 *6|4 *8|3 *8|3 *1|4 *5|3 *5|4 *1|2 *4) *(\d *){6}) *$"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
                 placeholder="Enter your phone number"
                 value={formData.phoneNumber}
                 onChange={handleInputChange}
@@ -295,7 +296,7 @@ const SingleProduct = (props) => {
               <select
                 id="wilaya"
                 name="wilaya"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
                 value={selectedWilaya}
                 onChange={handleWilayaChange}
                 required
@@ -321,7 +322,7 @@ const SingleProduct = (props) => {
                 <select
                   id="commune"
                   name="commune"
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
                   value={formData.commune}
                   onChange={handleInputChange}
                   required
@@ -344,6 +345,25 @@ const SingleProduct = (props) => {
               Commander Maintenant
             </button>
           </form>
+          <div className="mt-8 bg-gray-50 p-4 rounded-lg md:hidden block">
+            <h2 className="text-xl font-semibold text-gray-800">
+              Order Summary
+            </h2>
+            <div className="mt-2">
+              <div className="flex justify-between">
+                <span>Subtotal</span>
+                <span>{product.price * quantity} دج</span>
+              </div>
+              <div className="flex justify-between mt-2">
+                <span>Shipping</span>
+                <span>{shippingPrice}</span>
+              </div>
+              <div className="flex justify-between mt-2 font-bold text-lg">
+                <span>Total</span>
+                <span>{product.price * quantity + 400} دج</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </>
