@@ -34,6 +34,10 @@ const router = createBrowserRouter([
     path: "single-product",
     element: <SingleProduct />,
   },
+  {
+    path: "single-product",
+    element: <SingleProduct id = "1"  />,
+  },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
