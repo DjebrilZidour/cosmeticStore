@@ -1,7 +1,8 @@
 import { Link } from "react-scroll";
 import React, { useState } from "react";
 import Navbar from "./Navbar";
-import SecNav from "./SecNav";
+
+import { useLocation } from "react-router-dom";
 const shippingPrices = {
   Alger: "400 DZD",
   "Alger Express": "600 DZD",
@@ -166,6 +167,7 @@ const SingleProduct = (props) => {
     // }
     return "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load";
   };
+  const {state} = useLocation()
   return(
     <>
       <Navbar />
@@ -224,7 +226,7 @@ const SingleProduct = (props) => {
           </div>
         </div>
         <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0 p-12">
-          <h1 className="text-2xl font-bold text-gray-800">{product.name}</h1>
+          <h1 className="text-2xl font-bold text-gray-800">{state.title}</h1>
           <div className="mt-2 flex flex-col justify-center items-start">
             <h3 className="text-red-500 line-through">
               {product.originalPrice} دج

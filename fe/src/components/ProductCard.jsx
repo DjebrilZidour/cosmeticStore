@@ -1,7 +1,12 @@
-//!!!! import { Link } from "react-router-dom";     ICANT FIND A SOLUTION
+
+
+import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
 
 const ProductCard = (props) => {
-  
+  const {state} = useLocation()
+  const navigate = useNavigate()
   return (
     <div className="flex flex-col justify-center items-center sm:w-full  lg:w-80 border-2 border-black rounded-xl ">
       <div className="flex justify-center items-center w-full">
@@ -21,10 +26,16 @@ const ProductCard = (props) => {
         </div>
         <div className="flex justify-center items-center w-full font-serif ">
        
-          <button className="border-2 px-4 py-2 rounded-lg bg-red-200  hover:bg-red-300 w-2/3 text-black text-lg">
-            <a href={props.link} target="new">
+          <button onClick={()=>{
+            console.log("clicked product");
+            navigate("/single-product", {
+              state: {
+                title:props.title,
+              },})
+          }} className="border-2 px-4 py-2 rounded-lg bg-red-200  hover:bg-red-300 w-2/3 text-black text-lg">
+           
               Buy now
-            </a>
+           
           </button>
         </div>
       </div>

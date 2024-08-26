@@ -9,12 +9,17 @@ function App() {
     <section className="scroll-smooth">
       <Navbar />
       <SecNav />
+
       <div className="flex justify-center items-center w-full">
 
       <h1 className="uppercase text-5xl text-center text-red-500">ce site web est en maintenace 
-        <br />on excuse
+        <br />on s'excuse
       </h1>
+
       </div>
+      <div className=" flex-col justify-center items-center">
+          <Products />
+        </div>
 {/* 
       <div
         id="home"
