@@ -68,7 +68,7 @@ const SingleProduct = (props) => {
     wilaya: "",
     commune: "",
   });
-  const [shippingPrice, setShippingPrice] = useState("0 DZD");
+  const [shippingPrice, setShippingPrice] = useState(0);
 
   
 
@@ -120,7 +120,7 @@ const SingleProduct = (props) => {
     setCommunes(wilaya ? wilaya.communes : []);
     const wilayaName = wilaya ? wilaya.name : "";
     setFormData({ ...formData, wilaya: wilayaName, commune: "" });
-    setShippingPrice(shippingPrices[wilayaName] || "0 DZD"); // Set shipping price based on selected wilaya
+    setShippingPrice(shippingPrices[wilayaName] || "0"); // Set shipping price based on selected wilaya
   };
 
   const handleInputChange = (e) => {
@@ -161,6 +161,13 @@ const SingleProduct = (props) => {
   const {state} = useLocation()
   const product = state.props
   console.log(product.price);
+  const checkOldPrice = (price)=>{
+    if (price) {
+        return (<p>{price} دج</p>)
+    }else{
+        return
+    }
+  }
   return(
     <>
       <Navbar />
@@ -209,7 +216,7 @@ const SingleProduct = (props) => {
               </div>
               <div className="flex justify-between mt-2">
                 <span>Shipping</span>
-                <span>{shippingPrice}</span>
+                <span>{shippingPrice}  دج</span>
               </div>
               <div className="flex justify-between mt-2 font-bold text-lg">
                 <span>Total</span>
@@ -221,8 +228,9 @@ const SingleProduct = (props) => {
         <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0 p-12">
           <h1 className="text-2xl font-bold text-gray-800">{state.props.title}</h1>
           <div className="mt-2 flex flex-col justify-center items-start">
-            <h3 className="text-red-500 line-through">
-              {product.oldPrice} دج
+            <h3 className="text-red-500 line-through ">
+                {checkOldPrice(product.oldPrice)}
+              
             </h3>
             <h2 className="text-green-500 ml-2 text-xl font-bold">
               {product.price} دج
@@ -362,11 +370,11 @@ const SingleProduct = (props) => {
               </div>
               <div className="flex justify-between mt-2">
                 <span>Shipping</span>
-                <span>{shippingPrice}</span>
+                <span>{shippingPrice}  دج</span>
               </div>
               <div className="flex justify-between mt-2 font-bold text-lg">
                 <span>Total</span>
-                <span>{product.price * quantity + 400} دج</span>
+                <span>{product.price * quantity + shippingPrice} دج</span>
               </div>
             </div>
           </div>
