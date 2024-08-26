@@ -55,6 +55,58 @@ const shippingPrices = {
   'Adrar': '1100 DZD',
 };
 const SingleProduct= (props)=>{
+    const [quantity, setQuantity] = useState(1);
+    const [selectedWilaya, setSelectedWilaya] = useState('');
+    const [communes, setCommunes] = useState([]);
+    const [formData, setFormData] = useState({
+      fullName: '',
+      phoneNumber: '',
+      wilaya: '',
+      commune: '',
+    });
+    const [shippingPrice, setShippingPrice] = useState('0 DZD');
+  
+    const product = {
+      name: 'La Roshe Posay Baume B5 SPF 50',
+      price: 3900,
+      originalPrice: 4000,
+      description: 'A soothing balm that helps with skin repair and protection.',
+      imageUrl: 'https://example.com/product-image.jpg', // Replace with actual image URL
+    };
+  
+    const wilayas = [
+      { id: 1, name: 'Alger', communes: ['Alger-Centre', 'El Madania', 'El Harrach', 'El Madania', 'El Mouradia'] },
+      { id: 2, name: 'Oran', communes: ['Oran', 'Arzew', 'Bethioua', 'El Ançor', 'El Kerma'] },
+      { id: 3, name: 'Constantine', communes: ['Constantine', 'El Khroub', 'Hamma Bouziane', 'Mila', 'Ouled Rahmoun'] },
+      { id: 4, name: 'Annaba', communes: ['Annaba', 'El Hadjar', 'Seraïdi', 'El Tarf', 'Ramdane Djamel'] },
+      { id: 5, name: 'Tizi Ouzou', communes: ['Tizi Ouzou', 'Azazga', 'Bougie', 'Kabylie', 'El Kseur'] },
+      // Add remaining wilayas with their respective communes
+    ];
+  
+    const handleWilayaChange = (e) => {
+      const wilayaId = e.target.value;
+      const wilaya = wilayas.find((w) => w.id === parseInt(wilayaId));
+      setSelectedWilaya(wilayaId);
+      setCommunes(wilaya ? wilaya.communes : []);
+      const wilayaName = wilaya ? wilaya.name : '';
+      setFormData({ ...formData, wilaya: wilayaName, commune: '' });
+      setShippingPrice(shippingPrices[wilayaName] || '0 DZD'); // Set shipping price based on selected wilaya
+    };
+  
+    const handleInputChange = (e) => {
+      const { name, value } = e.target;
+      setFormData({ ...formData, [name]: value });
+    };
+  
+    const handleQuantityChange = (e) => {
+      setQuantity(e.target.value);
+    };
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      console.log(formData);
+      // Handle form submission (e.g., send data to a server)
+    };
 return(
     <>
     </>
