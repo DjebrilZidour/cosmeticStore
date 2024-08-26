@@ -56,6 +56,7 @@ const shippingPrices = {
   "Béni Abbes": "1000 DZD",
   Adrar: "1100 DZD",
 };
+
 const SingleProduct = (props) => {
   const [quantity, setQuantity] = useState(1);
   const [selectedWilaya, setSelectedWilaya] = useState("");
@@ -142,8 +143,18 @@ const SingleProduct = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    // Handle form submission (e.g., send data to a server)
+  
+    // fetch("http://localhost:1337/product", {
+    //   method: "POST",
+    //   body: JSON.stringify(formdata),
+    //   headers: {
+    //     Accept: "application/json",
+    //     "Content-Type": "application/json",
+    //   },
+    // }).then((response) => response.json().then((formdata) => console.log(formdata)));
   };
+    // Handle form submission (e.g., send data to a server)
+  
   const imgClicked = (clickedimg) => {
     handleImgChanger(clickedimg);
   };
@@ -155,7 +166,7 @@ const SingleProduct = (props) => {
     // }
     return "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load";
   };
-  return (
+  return(
     <>
       <Navbar />
 
@@ -311,7 +322,7 @@ const SingleProduct = (props) => {
                 ))}
               </select>
             </div>
-            {communes.length > 0 && (
+            {communes.length >= 0 && (
               <div className="mb-4">
                 <label
                   className="block text-gray-700 font-semibold mb-2"
@@ -327,7 +338,7 @@ const SingleProduct = (props) => {
                   onChange={handleInputChange}
                   required
                 >
-                  <option value="" disabled selected>
+                  <option value="1" disabled selected>
                     Select Commune
                   </option>
                   {communes.map((commune, index) => (
@@ -367,6 +378,8 @@ const SingleProduct = (props) => {
         </div>
       </section>
     </>
-  );
+  )
+    
+
 };
 export default SingleProduct;
