@@ -4,61 +4,61 @@ import Navbar from "./Navbar";
 
 import { useLocation } from "react-router-dom";
 const shippingPrices = {
-    Alger: 400,
+    "Alger": 400,
     "Alger Express": 600,
-    Blida: 600,
-    Tipaza: 600,
-    Boumerdes: 600,
-    Bouira: 650,
+    "Blida": 600,
+    "Tipaza": 600,
+    "Boumerdes": 600,
+    "Bouira": 650,
     "Ain Defla": 800,
-    Medea: 750,
-    Chlef: 750,
-    Tissemsilt: 800,
-    Tiaret: 800,
-    Relizane: 800,
-    Mostaghanem: 800,
-    Oran: 750,
-    Mascara: 800,
+    "Medea": 750,
+    "Chlef": 750,
+    "Tissemsilt": 800,
+    "Tiaret": 800,
+    "Relizane": 800,
+    "Mostaghanem": 800,
+    "Oran": 750,
+    "Mascara": 800,
     "Ain Temouchent": 800,
-    Tlemcen: 800,
+    "Tlemcen": 800,
     "Sidi Bel Abbes": 800,
-    Saida: 800,
+    "Saida": 800,
     "El Oued": 800,
-    Biskra: 900,
-    Ouargla: 900,
+    "Biskra": 900,
+    "Ouargla": 900,
     "El Mghaier": 900,
     "Ouled Djellal": 900,
     "El Meniaa": 900,
-    Timimoun: 950,
+    "Timimoun": 950,
     "Tizi Ouzou": 750,
-    Bejaia: 750,
-    Jijel: 800,
+    "Bejaia": 750,
+    "Jijel": 800,
     "Bordj Bou Arreridj": 750,
-    Sétif: 750,
-    Batna: 750,
-    Constantine: 750,
-    Guelma: 800,
-    "M’sila": 850,
-    Khenchela: 900,
-    Tebessa: 900,
+    "Sétif": 750,
+    "Batna": 750,
+    "Constantine": 750,
+    "Guelma": 800,
+    "Msila": 850,
+    "Khenchela": 900,
+    "Tebessa": 900,
     "Oum El Bouaghi": 800,
-    Mila: 750,
-    Skikda: 750,
-    Annaba: 800,
+    "Mila": 750,
+    "Skikda": 750,
+    "Annaba": 800,
     "El Tarf": 800,
     "Souk Ahras": 800,
-    Laghouat: 900,
-    Ghardaia: 900,
-    Djelfa: 900,
-    Touggourt: 900,
-    Béchar: 1000,
+    "Laghouat": 900,
+    "Ghardaia": 900,
+    "Djelfa": 900,
+    "Touggourt": 900,
+    "Béchar": 1000,
     "El-Bayadh": 1000,
-    Nâama: 1000,
+    "Nâama": 1000,
     "Béni Abbes": 1000,
-    Adrar: 1100,
+    "Adrar": 1100,
   };
-
-const SingleProduct = (props) => {
+  
+const SingleProduct = () => {
   const [quantity, setQuantity] = useState(1);
   const [selectedWilaya, setSelectedWilaya] = useState("");
   const [communes, setCommunes] = useState([]);
@@ -74,53 +74,130 @@ const SingleProduct = (props) => {
 
   const wilayas = [
     {
-      id: 1,
-      name: "Alger",
-      communes: [
-        "Alger-Centre",
-        "El Madania",
-        "El Harrach",
-        "El Madania",
-        "El Mouradia",
-      ],
-    },
-    {
-      id: 2,
-      name: "Oran",
-      communes: ["Oran", "Arzew", "Bethioua", "El Ançor", "El Kerma"],
-    },
-    {
-      id: 3,
-      name: "Constantine",
-      communes: [
-        "Constantine",
-        "El Khroub",
-        "Hamma Bouziane",
-        "Mila",
-        "Ouled Rahmoun",
-      ],
-    },
-    {
-      id: 4,
-      name: "Annaba",
-      communes: ["Annaba", "El Hadjar", "Seraïdi", "El Tarf", "Ramdane Djamel"],
-    },
-    {
-      id: 5,
-      name: "Tizi Ouzou",
-      communes: ["Tizi Ouzou", "Azazga", "Bougie", "Kabylie", "El Kseur"],
-    },
+        id: 1,
+        name: "Adrar",
+        communes: [
+          "Adrar",
+          "Reggane",
+          "Aoulef",
+          "Bouda",
+          "Tsabit"
+        ],
+      },
+      {
+        id: 2,
+        name: "Chlef",
+        communes: [
+          "Chlef",
+          "Tenes",
+          "El Karimia",
+          "Oued Fodda",
+          "Zeboudja"
+        ],
+      },
+      {
+        id: 3,
+        name: "Laghouat",
+        communes: [
+          "Laghouat",
+          "Aflou",
+          "Brida",
+          "El Ghicha",
+          "Hassi Delaa"
+        ],
+      },
+      {
+        id: 4,
+        name: "Oum El Bouaghi",
+        communes: [
+          "Oum El Bouaghi",
+          "Aïn Beïda",
+          "Ksar Sbahi",
+          "Aïn M'lila",
+          "Sigus"
+        ],
+      },
+      {
+        id: 5,
+        name: "Batna",
+        communes: [
+          "Batna",
+          "Barika",
+          "N'Gaous",
+          "Timgad",
+          "Ras El Aioun"
+        ],
+      },
+      {
+        id: 6,
+        name: "Béjaïa",
+        communes: [
+          "Béjaïa",
+          "Akbou",
+          "Amizour",
+          "Sidi Aïch",
+          "Tichy"
+        ],
+      },
+      {
+        id: 7,
+        name: "Biskra",
+        communes: [
+          "Biskra",
+          "Tolga",
+          "Sidi Okba",
+          "Ouled Djellal",
+          "El Kantara"
+        ],
+      },
+      {
+        id: 8,
+        name: "Béchar",
+        communes: [
+          "Béchar",
+          "Kenadsa",
+          "Abadla",
+          "Meridja",
+          "Igli"
+        ],
+      },
+      {
+        id: 9,
+        name: "Blida",
+        communes: [
+          "Blida",
+          "Boufarik",
+          "Meftah",
+          "El Affroun",
+          "Soumaa"
+        ],
+      },
+      {
+        id: 10,
+        name: "Bouira",
+        communes: [
+          "Bouira",
+          "Sour El Ghozlane",
+          "Lakhdaria",
+          "Kadiria",
+          "Haizer"
+        ],
+      }
     // Add remaining wilayas with their respective communes
   ];
 
   const handleWilayaChange = (e) => {
+
     const wilayaId = e.target.value;
+    console.log(wilayaId);
     const wilaya = wilayas.find((w) => w.id === parseInt(wilayaId));
+    console.log(wilaya);
     setSelectedWilaya(wilayaId);
     setCommunes(wilaya ? wilaya.communes : []);
     const wilayaName = wilaya ? wilaya.name : "";
     setFormData({ ...formData, wilaya: wilayaName, commune: "" });
-    setShippingPrice(shippingPrices[wilayaName] || "0"); // Set shipping price based on selected wilaya
+
+    setShippingPrice(shippingPrices[wilayaName] || 0 ); // Set shipping price based on selected wilaya
   };
 
   const handleInputChange = (e) => {
@@ -320,7 +397,7 @@ const SingleProduct = (props) => {
                 </option>
                 {wilayas.map((wilaya) => (
                   <option key={wilaya.id} value={wilaya.id}>
-                    {wilaya.name}
+                   {wilaya.id}- {wilaya.name} 
                   </option>
                 ))}
               </select>
