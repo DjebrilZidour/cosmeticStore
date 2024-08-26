@@ -5,8 +5,13 @@ import { createBrowserRouter, Form, RouterProvider } from "react-router-dom";
 import About from "./components/About.jsx";
 import ClientForm from "./components/ClientForm.jsx";
 import SingleProduct from "./components/SingleProduct.jsx";
+import Admin from "./pages/Admin.jsx"
 
 const router = createBrowserRouter([
+  {
+    path: "/admin",
+    element: <Admin />,
+  },
   {
     path: "/clientform ",
     element: <ClientForm />,
