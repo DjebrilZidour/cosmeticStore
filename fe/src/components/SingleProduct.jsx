@@ -253,12 +253,12 @@ const SingleProduct = () => {
         <div className="md:w-1/2 p-16">
           <div className=" flex flex-col gap-4">
             <div className="flex flex-col justify-center items-center gap-4 ">
-              <img className="rounded-xl w-full" src={handleImgChanger()} alt="" />
+              <img className="rounded-xl w-full" src={product.img} alt="" />
               <div className="flex md:justify-between justify-center px-6 gap-4 w-full">
                 <img
                   className="rounded-xl lg:w-24 md:w-12 w-16 cursor-pointer"
                   onClick={imgClicked(1)}
-                  src="https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                  src={product.img}
                   alt=""
                 />
                 <img
