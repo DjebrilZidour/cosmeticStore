@@ -59,14 +59,18 @@ const shippingPrices = {
   };
   
 const SingleProduct = () => {
+    const {state} = useLocation()
+    const product = state.props
   const [quantity, setQuantity] = useState(1);
   const [selectedWilaya, setSelectedWilaya] = useState("");
   const [communes, setCommunes] = useState([]);
+  const [clickedProduct, setClickedProduct] = useState("")
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
     wilaya: "",
     commune: "",
+    clickedProduct: product.title,
   });
   const [shippingPrice, setShippingPrice] = useState(0);
 
@@ -210,8 +214,18 @@ const SingleProduct = () => {
   };
 
   const handleSubmit = (e) => {
+    setClickedProduct(product.title)
     e.preventDefault();
     console.log(formData);
+    fetch("http://localhost:1337/product", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      }).then((response) => response.json().then((formData) => console.log(formData)));
+    };
   
     // fetch("http://localhost:1337/product", {
     //   method: "POST",
@@ -221,7 +235,7 @@ const SingleProduct = () => {
     //     "Content-Type": "application/json",
     //   },
     // }).then((response) => response.json().then((formdata) => console.log(formdata)));
-  };
+  
     // Handle form submission (e.g., send data to a server)
   
   const imgClicked = (clickedimg) => {
@@ -235,8 +249,8 @@ const SingleProduct = () => {
     // }
     return "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load";
   };
-  const {state} = useLocation()
-  const product = state.props
+ 
+  
   console.log(product.price);
   const checkOldPrice = (price)=>{
     if (price) {
