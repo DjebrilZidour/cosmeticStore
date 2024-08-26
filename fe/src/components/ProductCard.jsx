@@ -22,7 +22,7 @@ const ProductCard = (props) => {
         <p className="text-sm">{props.desc}</p>
         <div className=" flex flex-col justify-between items-start">
           <h3 className="decoration-dashed text-xl text-red-600 line-through">{props.oldPrice}</h3>
-          <h2 className="text-2xl text-green-500 font-serif">{props.price}</h2>
+          <h2 className="text-2xl text-green-500 font-serif">{props.price} DZD</h2>
         </div>
         <div className="flex justify-center items-center w-full font-serif ">
        
@@ -30,7 +30,7 @@ const ProductCard = (props) => {
             console.log("clicked product");
             navigate("/single-product", {
               state: {
-                title:props.title,
+                props,
               },})
           }} className="border-2 px-4 py-2 rounded-lg bg-red-200  hover:bg-red-300 w-2/3 text-black text-lg">
            

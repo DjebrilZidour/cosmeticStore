@@ -4,59 +4,59 @@ import Navbar from "./Navbar";
 
 import { useLocation } from "react-router-dom";
 const shippingPrices = {
-  Alger: "400 DZD",
-  "Alger Express": "600 DZD",
-  Blida: "600 DZD",
-  Tipaza: "600 DZD",
-  Boumerdes: "600 DZD",
-  Bouira: "650 DZD",
-  "Ain Defla": "800 DZD",
-  Medea: "750 DZD",
-  Chlef: "750 DZD",
-  Tissemsilt: "800 DZD",
-  Tiaret: "800 DZD",
-  Relizane: "800 DZD",
-  Mostaghanem: "800 DZD",
-  Oran: "750 DZD",
-  Mascara: "800 DZD",
-  "Ain Temouchent": "800 DZD",
-  Tlemcen: "800 DZD",
-  "Sidi Bel Abbes": "800 DZD",
-  Saida: "800 DZD",
-  "El Oued": "800 DZD",
-  Biskra: "900 DZD",
-  Ouargla: "900 DZD",
-  "El Mghaier": "900 DZD",
-  "Ouled Djellal": "900 DZD",
-  "El Meniaa": "900 DZD",
-  Timimoun: "950 DZD",
-  "Tizi Ouzou": "750 DZD",
-  Bejaia: "750 DZD",
-  Jijel: "800 DZD",
-  "Bordj Bou Arreridj": "750 DZD",
-  Sétif: "750 DZD",
-  Batna: "750 DZD",
-  Constantine: "750 DZD",
-  Guelma: "800 DZD",
-  "M’sila": "850 DZD",
-  Khenchela: "900 DZD",
-  Tebessa: "900 DZD",
-  "Oum El Bouaghi": "800 DZD",
-  Mila: "750 DZD",
-  Skikda: "750 DZD",
-  Annaba: "800 DZD",
-  "El Tarf": "800 DZD",
-  "Souk Ahras": "800 DZD",
-  Laghouat: "900 DZD",
-  Ghardaia: "900 DZD",
-  Djelfa: "900 DZD",
-  Touggourt: "900 DZD",
-  Béchar: "1000 DZD",
-  "El-Bayadh": "1000 DZD",
-  Nâama: "1000 DZD",
-  "Béni Abbes": "1000 DZD",
-  Adrar: "1100 DZD",
-};
+    Alger: 400,
+    "Alger Express": 600,
+    Blida: 600,
+    Tipaza: 600,
+    Boumerdes: 600,
+    Bouira: 650,
+    "Ain Defla": 800,
+    Medea: 750,
+    Chlef: 750,
+    Tissemsilt: 800,
+    Tiaret: 800,
+    Relizane: 800,
+    Mostaghanem: 800,
+    Oran: 750,
+    Mascara: 800,
+    "Ain Temouchent": 800,
+    Tlemcen: 800,
+    "Sidi Bel Abbes": 800,
+    Saida: 800,
+    "El Oued": 800,
+    Biskra: 900,
+    Ouargla: 900,
+    "El Mghaier": 900,
+    "Ouled Djellal": 900,
+    "El Meniaa": 900,
+    Timimoun: 950,
+    "Tizi Ouzou": 750,
+    Bejaia: 750,
+    Jijel: 800,
+    "Bordj Bou Arreridj": 750,
+    Sétif: 750,
+    Batna: 750,
+    Constantine: 750,
+    Guelma: 800,
+    "M’sila": 850,
+    Khenchela: 900,
+    Tebessa: 900,
+    "Oum El Bouaghi": 800,
+    Mila: 750,
+    Skikda: 750,
+    Annaba: 800,
+    "El Tarf": 800,
+    "Souk Ahras": 800,
+    Laghouat: 900,
+    Ghardaia: 900,
+    Djelfa: 900,
+    Touggourt: 900,
+    Béchar: 1000,
+    "El-Bayadh": 1000,
+    Nâama: 1000,
+    "Béni Abbes": 1000,
+    Adrar: 1100,
+  };
 
 const SingleProduct = (props) => {
   const [quantity, setQuantity] = useState(1);
@@ -70,16 +70,7 @@ const SingleProduct = (props) => {
   });
   const [shippingPrice, setShippingPrice] = useState("0 DZD");
 
-  const product = {
-    name: "La Roshe Posay Baume B5 SPF 50",
-    price: 3900,
-    originalPrice: 4000,
-    description: "A soothing balm that helps with skin repair and protection.",
-    1: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load", // Replace with actual image URL
-    2: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
-    3: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
-    4: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
-  };
+  
 
   const wilayas = [
     {
@@ -168,6 +159,8 @@ const SingleProduct = (props) => {
     return "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load";
   };
   const {state} = useLocation()
+  const product = state.props
+  console.log(product.price);
   return(
     <>
       <Navbar />
@@ -220,16 +213,16 @@ const SingleProduct = (props) => {
               </div>
               <div className="flex justify-between mt-2 font-bold text-lg">
                 <span>Total</span>
-                <span>{product.price * quantity + 400} دج</span>
+                <span>{(state.props.price * quantity )+ shippingPrice} دج</span>
               </div>
             </div>
           </div>
         </div>
         <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0 p-12">
-          <h1 className="text-2xl font-bold text-gray-800">{state.title}</h1>
+          <h1 className="text-2xl font-bold text-gray-800">{state.props.title}</h1>
           <div className="mt-2 flex flex-col justify-center items-start">
             <h3 className="text-red-500 line-through">
-              {product.originalPrice} دج
+              {product.oldPrice} دج
             </h3>
             <h2 className="text-green-500 ml-2 text-xl font-bold">
               {product.price} دج
