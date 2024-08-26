@@ -12,11 +12,11 @@ const Admin = () => {
           response.json().then((responseData) => setMyCommands(responseData.data))
         );
       };
-    
+    getCommands()
     return(
         <section>
             <h1 className="text-5xl text-green-500">Welcome Back Djebril</h1>
-            <button onClick={getCommands}>dcdcd</button>
+           
             {myCommands.map((command, index) => {
           return (
             <div
