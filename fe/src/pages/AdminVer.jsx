@@ -28,10 +28,15 @@ const AdminVer = () => {
   const [typedPassword, setTypedPassword] = useState("");
   const navigate = useNavigate();
   const { state } = useLocation();
+  const LOCAL_STORAGE_KEYS = {
+  isLogged: "isUserLoggedIn",
+};
 
   const submitLogin = () => {
     if (typedEmail === "djebril" && typedPassword === "djebrildjebril") {
-      navigate("/admin", { state: {etat:"true"} });
+       localStorage.setItem(LOCAL_STORAGE_KEYS.isLogged, true);
+          navigate("/admin");
+          location.reload();
     } else {
       alert("Try again, man!"); // Show an alert or some UI for incorrect credentials
     }
