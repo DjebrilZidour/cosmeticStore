@@ -52,6 +52,7 @@ const createCommand = (req, res) => {
     }
   });
 };
+
 const readCommands = (req, res) => {
   fs.access(path, fs.constants.F_OK, (err) => {
     if (err) {

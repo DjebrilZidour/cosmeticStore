@@ -49,6 +49,7 @@ if (!isUserLogged) {
                 key={index}
                 className="my-4 py-4 border-2 border-blue-500 w-3/5 mx-auto rounded-xl"
               >
+                <p>produit : {command.product}</p>
                 <p>name : {command.name} </p>
                 <p>phone : {command.phone} </p>
                 <p>wilaya : {command.wilaya} </p>
