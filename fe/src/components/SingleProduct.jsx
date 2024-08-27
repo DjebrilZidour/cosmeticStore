@@ -140,7 +140,7 @@ const SingleProduct = () => {
     phoneNumber: "",
     wilaya: "",
     commune: "",
-    clickedProduct: product.title,
+    product: product.title,
   });
   const [shippingPrice, setShippingPrice] = useState(0);
 
