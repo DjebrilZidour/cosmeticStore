@@ -5,143 +5,141 @@ import { useParams } from "react-router-dom";
 
 import { useLocation } from "react-router-dom";
 
-
-  
 const shippingPrices = {
-    "Alger": 400,
-    "Alger Express": 600,
-    "Blida": 600,
-    "Tipaza": 600,
-    "Boumerdes": 600,
-    "Bouira": 650,
-    "Ain Defla": 800,
-    "Medea": 750,
-    "Chlef": 750,
-    "Tissemsilt": 800,
-    "Tiaret": 800,
-    "Relizane": 800,
-    "Mostaghanem": 800,
-    "Oran": 750,
-    "Mascara": 800,
-    "Ain Temouchent": 800,
-    "Tlemcen": 800,
-    "Sidi Bel Abbes": 800,
-    "Saida": 800,
-    "El Oued": 800,
-    "Biskra": 900,
-    "Ouargla": 900,
-    "El Mghaier": 900,
-    "Ouled Djellal": 900,
-    "El Meniaa": 900,
-    "Timimoun": 950,
-    "Tizi Ouzou": 750,
-    "Bejaia": 750,
-    "Jijel": 800,
-    "Bordj Bou Arreridj": 750,
-    "Sétif": 750,
-    "Batna": 750,
-    "Constantine": 750,
-    "Guelma": 800,
-    "Msila": 850,
-    "Khenchela": 900,
-    "Tebessa": 900,
-    "Oum El Bouaghi": 800,
-    "Mila": 750,
-    "Skikda": 750,
-    "Annaba": 800,
-    "El Tarf": 800,
-    "Souk Ahras": 800,
-    "Laghouat": 900,
-    "Ghardaia": 900,
-    "Djelfa": 900,
-    "Touggourt": 900,
-    "Béchar": 1000,
-    "El-Bayadh": 1000,
-    "Nâama": 1000,
-    "Béni Abbes": 1000,
-    "Adrar": 1100,
-  };
-  const products = [
-    {
-      id: 1,
-      title: "La roshe-posay Effaclar K(+)",
-      desc: "Ne laissez pas les imperfections vous empêcher de rayonner! Adoptez notre Soin Effaclar K+ de La Roche-Posay dès aujourd'hui et retrouvez une peau saine et équilibrée.",
-      img: "https://i.ibb.co/PG5rLjQ/3-copy-2.png",
-      star: "https://cdn-icons-png.flaticon.com/128/10801/10801392.png",
-      oldPrice: 4500,
-      price: 3999,
-      link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/la-rosheposay-effaclar-k",
-    },
-    {
-      id: 2,
-      title: "Avéne cleanance gel nettoyant 400 Ml",
-      desc: "Ne laissez pas les impuretés ternir votre éclat naturel! Adoptez le Gel Nettoyant Cleanance d'Avene dès aujourd'hui et retrouvez une peau équilibrée et éclatante de santé.",
-      img: "https://i.ibb.co/f4g1DvJ/3-copy.png",
-      star: "",
-      oldPrice: null,
-      price: 4499,
-      link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/avene-cleanance-gel-nettoyant-400-ml",
-    },
-    {
-      id: 3,
-      title: "Cerave Gel Nettoyant Anti-Rugosités​ 236ml",
-      desc: "Nettoyant moussant qui favorise l'élimination des rugosités pour une peau lisse",
-      img: "https://i.ibb.co/wLC72w8/4.png",
-      star: "",
-      oldPrice: 4000,
-      price: 3500,
-      link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/cerave-gel-nettoyant-antirugosites-236ml",
-    },
-    {
-      id: 4,
-      title: "La roshe posay Cicaplast Baume B5",
-      desc: "Ce baume prend soin de votre peau en profondeur. 💧 Pour des lèvres gercées, des zones sèches ou des petites irritations, le Baume B5 Cicaplast est votre allié de confiance.",
-      img: "https://i.ibb.co/D52Qp8c/3.png",
-      star: "",
-      oldPrice: 4000,
-      price: 3900,
-      link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/la-roshe-posay-cicaplast-baume-b5",
-    },
-    {
-      id: 5,
-      title: "Ceravie Hydrating Facial Cleanser 437ml",
-      desc: "Il élimine délicatement le maquillage et les impuretés, laissant la peau douce.💙 Pour une expérience agréable, spécialement pour les peaux sensibles et sèches.",
-      img: "https://i.ibb.co/0rFVJP1/2.png",
-      star: "",
-      oldPrice: 4700,
-      price: 4300,
-      link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/ceravie-hydrating-facial-cleanser",
-    },
-    {
-      id: 6,
-      title: "The Ordinary Hyaluronic Acid 2% + B5",
-      desc: "Sa texture légère et non grasse pénètre rapidement dans la peau, offrant une hydratation intense et durable. Convient à tous les types de peau, même les plus sensibles.",
-      img: "https://i.ibb.co/kqZrTvD/1.png",
-      star: "",
-      oldPrice: 5600,
-      price: 4850,
-      link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/the-ordinary-hyluronic-acid-2-b5",
-    },
-    {
-      id: 7,
-      title: "Ordinary Niacinamide 10% + Zinc 1%",
-      desc: "Ne laissez pas les imperfections ternir votre éclat naturel! Adoptez notre Sérum Niacinamide 10% + Zinc 1% de The Ordinary dès aujourd'hui et retrouvez une peau éclatante de santé.",
-      img: "https://i.ibb.co/FKtM3WT/1-copy-3.png",
-      star: "",
-      oldPrice: 3800,
-      price: 3450,
-      link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/the-ordinary-niacinamide-10-zinc-1",
-    },
-  ];
-  
+  Alger: 400,
+  "Alger Express": 600,
+  Blida: 600,
+  Tipaza: 600,
+  Boumerdes: 600,
+  Bouira: 650,
+  "Ain Defla": 800,
+  Medea: 750,
+  Chlef: 750,
+  Tissemsilt: 800,
+  Tiaret: 800,
+  Relizane: 800,
+  Mostaghanem: 800,
+  Oran: 750,
+  Mascara: 800,
+  "Ain Temouchent": 800,
+  Tlemcen: 800,
+  "Sidi Bel Abbes": 800,
+  Saida: 800,
+  "El Oued": 800,
+  Biskra: 900,
+  Ouargla: 900,
+  "El Mghaier": 900,
+  "Ouled Djellal": 900,
+  "El Meniaa": 900,
+  Timimoun: 950,
+  "Tizi Ouzou": 750,
+  Bejaia: 750,
+  Jijel: 800,
+  "Bordj Bou Arreridj": 750,
+  Sétif: 750,
+  Batna: 750,
+  Constantine: 750,
+  Guelma: 800,
+  Msila: 850,
+  Khenchela: 900,
+  Tebessa: 900,
+  "Oum El Bouaghi": 800,
+  Mila: 750,
+  Skikda: 750,
+  Annaba: 800,
+  "El Tarf": 800,
+  "Souk Ahras": 800,
+  Laghouat: 900,
+  Ghardaia: 900,
+  Djelfa: 900,
+  Touggourt: 900,
+  Béchar: 1000,
+  "El-Bayadh": 1000,
+  Nâama: 1000,
+  "Béni Abbes": 1000,
+  Adrar: 1100,
+};
+const products = [
+  {
+    id: 1,
+    title: "La roshe-posay Effaclar K(+)",
+    desc: "Ne laissez pas les imperfections vous empêcher de rayonner! Adoptez notre Soin Effaclar K+ de La Roche-Posay dès aujourd'hui et retrouvez une peau saine et équilibrée.",
+    img: "https://i.ibb.co/PG5rLjQ/3-copy-2.png",
+    star: "https://cdn-icons-png.flaticon.com/128/10801/10801392.png",
+    oldPrice: 4500,
+    price: 3999,
+    link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/la-rosheposay-effaclar-k",
+  },
+  {
+    id: 2,
+    title: "Avéne cleanance gel nettoyant 400 Ml",
+    desc: "Ne laissez pas les impuretés ternir votre éclat naturel! Adoptez le Gel Nettoyant Cleanance d'Avene dès aujourd'hui et retrouvez une peau équilibrée et éclatante de santé.",
+    img: "https://i.ibb.co/f4g1DvJ/3-copy.png",
+    star: "",
+    oldPrice: null,
+    price: 4499,
+    link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/avene-cleanance-gel-nettoyant-400-ml",
+  },
+  {
+    id: 3,
+    title: "Cerave Gel Nettoyant Anti-Rugosités​ 236ml",
+    desc: "Nettoyant moussant qui favorise l'élimination des rugosités pour une peau lisse",
+    img: "https://i.ibb.co/wLC72w8/4.png",
+    star: "",
+    oldPrice: 4000,
+    price: 3500,
+    link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/cerave-gel-nettoyant-antirugosites-236ml",
+  },
+  {
+    id: 4,
+    title: "La roshe posay Cicaplast Baume B5",
+    desc: "Ce baume prend soin de votre peau en profondeur. 💧 Pour des lèvres gercées, des zones sèches ou des petites irritations, le Baume B5 Cicaplast est votre allié de confiance.",
+    img: "https://i.ibb.co/D52Qp8c/3.png",
+    star: "",
+    oldPrice: 4000,
+    price: 3900,
+    link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/la-roshe-posay-cicaplast-baume-b5",
+  },
+  {
+    id: 5,
+    title: "Ceravie Hydrating Facial Cleanser 437ml",
+    desc: "Il élimine délicatement le maquillage et les impuretés, laissant la peau douce.💙 Pour une expérience agréable, spécialement pour les peaux sensibles et sèches.",
+    img: "https://i.ibb.co/0rFVJP1/2.png",
+    star: "",
+    oldPrice: 4700,
+    price: 4300,
+    link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/ceravie-hydrating-facial-cleanser",
+  },
+  {
+    id: 6,
+    title: "The Ordinary Hyaluronic Acid 2% + B5",
+    desc: "Sa texture légère et non grasse pénètre rapidement dans la peau, offrant une hydratation intense et durable. Convient à tous les types de peau, même les plus sensibles.",
+    img: "https://i.ibb.co/kqZrTvD/1.png",
+    star: "",
+    oldPrice: 5600,
+    price: 4850,
+    link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/the-ordinary-hyluronic-acid-2-b5",
+  },
+  {
+    id: 7,
+    title: "Ordinary Niacinamide 10% + Zinc 1%",
+    desc: "Ne laissez pas les imperfections ternir votre éclat naturel! Adoptez notre Sérum Niacinamide 10% + Zinc 1% de The Ordinary dès aujourd'hui et retrouvez une peau éclatante de santé.",
+    img: "https://i.ibb.co/FKtM3WT/1-copy-3.png",
+    star: "",
+    oldPrice: 3800,
+    price: 3450,
+    link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/the-ordinary-niacinamide-10-zinc-1",
+  },
+];
+
 const SingleProduct = () => {
-    const { id } = useParams();
-    const product = products.find(p => p.id === parseInt(id));
+  const { id } = useParams();
+  const product = products.find((p) => p.id === parseInt(id));
 
   const [quantity, setQuantity] = useState(1);
   const [selectedWilaya, setSelectedWilaya] = useState("");
   const [communes, setCommunes] = useState([]);
-  const [clickedProduct, setClickedProduct] = useState("")
+  const [clickedProduct, setClickedProduct] = useState("");
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
@@ -151,168 +149,464 @@ const SingleProduct = () => {
   });
   const [shippingPrice, setShippingPrice] = useState(0);
 
-  
-
   const wilayas = [
     {
-        id: 1,
-        name: "Adrar",
-        communes: [
-          "Adrar",
-          "Reggane",
-          "Aoulef",
-          "Bouda",
-          "Tsabit"
-        ],
-      },
-      {
-        id: 2,
-        name: "Chlef",
-        communes: [
-          "Chlef",
-          "Tenes",
-          "El Karimia",
-          "Oued Fodda",
-          "Zeboudja"
-        ],
-      },
-      {
-        id: 3,
-        name: "Laghouat",
-        communes: [
-          "Laghouat",
-          "Aflou",
-          "Brida",
-          "El Ghicha",
-          "Hassi Delaa"
-        ],
-      },
-      {
-        id: 4,
-        name: "Oum El Bouaghi",
-        communes: [
-          "Oum El Bouaghi",
-          "Aïn Beïda",
-          "Ksar Sbahi",
-          "Aïn M'lila",
-          "Sigus"
-        ],
-      },
-      {
-        id: 5,
-        name: "Batna",
-        communes: [
-          "Batna",
-          "Barika",
-          "N'Gaous",
-          "Timgad",
-          "Ras El Aioun"
-        ],
-      },
-      {
-        id: 6,
-        name: "Béjaïa",
-        communes: [
-          "Béjaïa",
-          "Akbou",
-          "Amizour",
-          "Sidi Aïch",
-          "Tichy"
-        ],
-      },
-      {
-        id: 7,
-        name: "Biskra",
-        communes: [
-          "Biskra",
-          "Tolga",
-          "Sidi Okba",
-          "Ouled Djellal",
-          "El Kantara"
-        ],
-      },
-      {
-        id: 8,
-        name: "Béchar",
-        communes: [
-          "Béchar",
-          "Kenadsa",
-          "Abadla",
-          "Meridja",
-          "Igli"
-        ],
-      },
-      {
-        id: 9,
-        name: "Blida",
-        communes: [
-          "Blida",
-          "Boufarik",
-          "Meftah",
-          "El Affroun",
-          "Soumaa"
-        ],
-      },
-      {
-        id: 10,
-        name: "Bouira",
-        communes: [
-          "Bouira",
-          "Sour El Ghozlane",
-          "Lakhdaria",
-          "Kadiria",
-          "Haizer"
-        ],
-      },
-      {
-        "id": 16, // J'ai attribué l'ID 16 à la wilaya d'Alger. Vous pouvez le modifier si nécessaire.
-        "name": "Alger",
-        "communes": [
-          "Alger-Centre",
-          "Bab El Oued",
-          "Bologhine",
-          "Casbah",
-          "El Madania",
-          "Hydra",
-          "Rais Hamidou",
-          "Sidi Moussa",
-          "Oued Koriche",
-          "Birtouta",
-          "Tessala El Merdja",
-          "Les Eucalyptus",
-          "Bir Mourad Raïs",
-          "El Biar",
-          "Bouzareah",
-          "Beni Messous",
-          "Dar El Beïda",
-          "Ain Taya",
-          "Bab Ezzouar",
-          "Bordj El Bahri",
-          "Bordj El Kiffan",
-          "El Marsa",
-          "Mohammadia",
-          "Baraki",
-          "Birkhadem",
-          "Djasr Kasentina",
-          "Sehaoula",
-          "Cheraga",
-          "Ain Benian",
-          "Dely Ibrahim",
-          "Hammamet",
-          "Ouled Fayet",
-          "Draria",
-          "Baba Hassan",
-          "Douira",
-          "El Achour",
-          "Khraisssia",
-          "El Harrach"
-        ]
-      }
+      id: 1,
+      name: "أدرار",
+      communes: [
+        "تيمقتن",
+        "بودة",
+        "أولاد أحمد تيمي",
+        "أدرار",
+        "فنوغيل",
+        "إن زغمير",
+        "رقان",
+        "سالي",
+        "السبع",
+        "تسابيت",
+        "تامست",
+        "تامنطيط",
+        "تيت",
+        "زاوية كنتة",
+        "اقبلي",
+        "أولف",
+      ],
+    },
+
+    {
+      id: 2,
+      name: "الشلف",
+      communes: [
+        "تلعصة",
+        "الزبوجة",
+        "أولاد عباس",
+        "بني راشد",
+        "الهرانفة",
+        "تاجنة",
+        "المرسى",
+        "الشلف",
+        "سنجاس",
+        "سيدي عبد الرحمن",
+        "سيدي عكاشة",
+        "تنس",
+        "الكريمية",
+        "حرشون",
+        "تاوقريت",
+        "بني حواء",
+        "أبو الحسن",
+        "وادي قوسين",
+        "الشطية",
+        "مصدق",
+        "أولاد فارس",
+        "بوقادير",
+        "وادي سلي",
+        "الحجاج",
+        "أولاد بن عبد القادر",
+        "عين مران",
+        "بريرة",
+        "وادي الفضة",
+        "أم الدروع",
+        "بني بوعتاب",
+        "بوزغاية",
+        "الصبحة",
+        "بنايرية",
+        "الأبيض مجاجة",
+      ],
+    },
+    {
+      id: 3,
+      name: "الأغواط",
+      communes: [
+        "سبقاق",
+        "سيدي بوزيد",
+        "وادي مرة",
+        "وادي مزي",
+        "العسافية",
+        "سيدي مخلوف",
+        "حاسي الدلاعة",
+        "حاسي الرمل",
+        "عين ماضي",
+        "الحويطة",
+        "الخنق",
+        "بن ناصر بن شهرة",
+        "أفلو",
+        "الأغواط",
+        "قصر الحيران",
+        "البيضاء",
+        "قلتة سيدي سعد",
+        "بريدة",
+        "عين سيدي علي",
+        "تاجموت",
+        "الحاج مشري",
+        "تاويالة",
+        "الغيشة",
+        "تاجرونة",
+      ],
+    },
+    {
+      id: 4,
+      name: "Oum El Bouaghi",
+      communes: [
+        "Oum El Bouaghi",
+        "Aïn Beïda",
+        "Ksar Sbahi",
+        "Aïn M'lila",
+        "Sigus",
+      ],
+    },
+    {
+      id: 5,
+      name: "باتنة",
+      communes: [
+        "معافة",
+        "القصبات",
+        "تيمقاد",
+        "تاكسلانت",
+        "أولاد سي سليمان",
+        "تالخمت",
+        "رأس العيون",
+        "الرحبات",
+        "أولاد سلام",
+        "القيقبة",
+        "ثنية العابد",
+        "باتنة",
+        "فسديس",
+        "وادي الشعبة",
+        "حيدوسة",
+        "قصر بلزمة",
+        "مروانة",
+        "وادي الماء",
+        "لازرو",
+        "سريانة",
+        "زانة البيضاء",
+        "منعة",
+        "تغرغار",
+        "عين ياقوت",
+        "بومية",
+        "جرمة",
+        "المعذر",
+        "عيون العصافير",
+        "تازولت",
+        "بومقر",
+        "نقاوس",
+        "سفيان",
+        "أريس",
+        "تيغانمين",
+        "عين جاسر",
+        "الحاسي",
+        "سقانة",
+        "تيلاطو",
+        "فم الطوب",
+        "إشمول",
+        "إينوغيسن",
+        "بوزينة",
+        "لارباع",
+        "بولهيلات",
+        "الشمرة",
+        "بريكة",
+        "بيطام",
+        "الجزار",
+        "أولاد عمار",
+        "غسيرة",
+        "كيمل",
+        "عين التوتة",
+        "بني فضالة الحقانية",
+        "أولاد فاضل",
+        "أولاد عوف",
+        "شير",
+        "وادي الطاقة",
+        "Tkout",
+        "Amdoukal",
+        "Lemsane",
+        "Metkaouak"
+      ],
+    },
+    {
+      id: 6,
+      name: "Béjaïa",
+      communes: [
+        "Béjaïa",
+        "Akbou",
+        "Amizour",
+        "Sidi Aïch",
+        "Tichy",
+        "Ighil Ali",
+        "El Kseur",
+        "Tizi N'Tleta",
+        "Tizi Rached",
+        "Aokas",
+        "El Hachimia",
+        "Chemini",
+      ],
+    },
+    {
+      id: 7,
+      name: "Biskra",
+      communes: ["Biskra", "Tolga", "Sidi Okba", "Ouled Djellal", "El Kantara"],
+    },
+    {
+      id: 8,
+      name: "Béchar",
+      communes: ["Béchar", "Kenadsa", "Abadla", "Meridja", "Igli"],
+    },
+    {
+      id: 9,
+      name: "Blida",
+      communes: ["Blida", "Boufarik", "Meftah", "El Affroun", "Soumaa"],
+    },
+    {
+      id: 10,
+      name: "Bouira",
+      communes: [
+        "Blida",
+        "Boufarik",
+        "Meftah",
+        "Larbaâ",
+        "Soumaa",
+        "El Hadjar",
+        "El Affrou",
+        "Mouzaïa",
+        "Oued Djemaa",
+        "Chiffa",
+        "El Hammam",
+        "Ain El Hadjar",
+        "Ain El Harrach",
+        "Ain Benian",
+        "Beni Merad",
+        "Beni Slimane",
+        "Maïssa",
+        "Oued Moussa",
+        "Oued Wardiya",
+        "Tichy",
+      ],
+    },
+    {
+      id: 15,
+      name: "Tizi Ouzou",
+      communes: [
+        "Tizi Ouzou",
+        "Boghni",
+        "Azazga",
+        "Freha",
+        "Tizi Rached",
+        "Ait Yahia Moussa",
+        "Boukhemis",
+        "Tigzirt",
+        "Ait Jenna",
+        "Adekar",
+        "Ouaguenoun",
+        "Frioua",
+        "Ifigha",
+        "Ait Zizi",
+        "Maâtkas",
+        "Aït Bouaddou",
+        "Iferhounène",
+        "Larbaâ Nath Irathen",
+        "Aït Deloua",
+        "Aït Yahia",
+        "Aït Khelili",
+        "Aït Mellal",
+        "Aït Chafaa",
+        "Aït Boumahdi",
+        "Aït Ouabane",
+      ],
+    },
+    {
+      id: 16, // J'ai attribué l'ID 16 à la wilaya d'Alger. Vous pouvez le modifier si nécessaire.
+      name: "Alger",
+      communes: [
+        "Alger-Centre",
+        "Bab El Oued",
+        "Bologhine",
+        "Casbah",
+        "El Madania",
+        "Hydra",
+        "Rais Hamidou",
+        "Sidi Moussa",
+        "Oued Koriche",
+        "Birtouta",
+        "Tessala El Merdja",
+        "Les Eucalyptus",
+        "Bir Mourad Raïs",
+        "El Biar",
+        "Bouzareah",
+        "Beni Messous",
+        "Dar El Beïda",
+        "Ain Taya",
+        "Bab Ezzouar",
+        "Bordj El Bahri",
+        "Bordj El Kiffan",
+        "El Marsa",
+        "Mohammadia",
+        "Baraki",
+        "Birkhadem",
+        "Djasr Kasentina",
+        "Sehaoula",
+        "Cheraga",
+        "Ain Benian",
+        "Dely Ibrahim",
+        "Hammamet",
+        "Ouled Fayet",
+        "Draria",
+        "Baba Hassan",
+        "Douira",
+        "El Achour",
+        "Khraisssia",
+        "El Harrach",
+      ],
+    },
+    {
+      id: 18,
+      name: "Jijel",
+      communes: [
+        "Jijel",
+        "Ziama Mansouriah",
+        "El Milia",
+        "Boudria",
+        "Taher",
+        "Ouled Teffa",
+        "El Aouana",
+        "Bousaada",
+        "Ouled Abbes",
+        "Beni Mellal",
+        "Tahir",
+        "Ouled Teffa",
+        "El Aouana",
+        "Bousaada",
+        "Ouled Abbes",
+        "Beni Mellal",
+        "Tahir",
+        "Ouled Teffa",
+        "El Aouana",
+        "Bousaada",
+        "Ouled Abbes",
+        "Beni Mellal",
+        "Tahir",
+        "Ouled Teffa",
+        "El Aouana",
+        "Bousaada",
+        "Ouled Abbes",
+        "Beni Mellal",
+      ],
+    },
+    {
+      id: 28,
+      name: "Timimoun",
+      communes: [
+        "Timimoun",
+        "Ouled Saïd",
+        "Tinerkouk",
+        "Ksar Kaddour",
+        "Charouine",
+        "Ouled Aïssa",
+        "Talmine",
+        "Aougrout",
+        "Métarfa",
+        "Deldoul",
+      ],
+    },
+    {
+      id: 35,
+      name: "Boumerdès",
+      communes: [
+        "Afir",
+        "Ammal",
+        "Baghlia",
+        "Ben Choud",
+        "Beni Amrane",
+        "Bordj Menaïel",
+        "Boudouaou",
+        "Boudouaou El Bahri",
+        "Boumerdès",
+        "Bouzegza Keddara",
+        "Chabet el Ameur",
+        "Corso",
+        "Dellys",
+        "Djinet",
+        "El Kharrouba",
+        "Hammedi",
+        "Isser",
+        "Khemis El Khechna",
+        "Larbatache",
+        "Leghata",
+        "Naciria",
+        "Ouled Aïssa",
+        "Ouled Hedadj",
+        "Ouled Moussa",
+        "Si Mustapha",
+        "Sidi Daoud",
+        "Souk El Had",
+        "Taourga",
+        "Thénia",
+        "Tidjelabine",
+        "Timezrit",
+        "Zemmouri",
+      ],
+    },
+    {
+      id: 43,
+      name: "أم البواقي",
+      communes: [
+        "فكيرينة",
+        "الفجوج بوغرارة سعودي",
+        "عين فكرون",
+        "الرحية",
+        "مسكيانة",
+        "البلالة",
+        "بحير الشرقي",
+        "قصر الصباحي",
+        "سوق نعمان",
+        "أولاد زواي",
+        "أم البواقي",
+        "عين ببوش",
+        "عين الزيتون",
+        "بئر الشهداء",
+        "عين البيضاء",
+        "بريش",
+        "الزرق",
+        "عين مليلة",
+        "أولاد قاسم",
+        "أولاد حملة",
+        "العامرية",
+        "سيقوس",
+        "وادي نيني",
+        "عين الديس",
+        "الضلعة",
+        "الجازية",
+        "عين كرشة",
+        "الحرملية",
+        "هنشير تومغني"
+      ],
+    },    
+    {
+      id: 44,
+      name: "Tipaza",
+      communes: [
+        "Aghbal",
+        "Ben Chicao",
+        "Cherchell",
+        "Douaouda",
+        "Hadjout",
+        "Koléa",
+        "Larbatnath",
+        "Mahelma",
+        "Meftah",
+        "Nador",
+        "Sidi Amar",
+        "Sidi Ghiles",
+        "Sidi Rached",
+        "Souk Tleta",
+        "Tacheda",
+        "Tamentfoust",
+        "Thenia",
+        "Tipaza",
+        "Zéralda",
+      ],
+    },
     // Add remaining wilayas with their respective communes
   ];
 
   const handleWilayaChange = (e) => {
-
     const wilayaId = e.target.value;
     console.log(wilayaId);
     const wilaya = wilayas.find((w) => w.id === parseInt(wilayaId));
@@ -322,7 +616,7 @@ const SingleProduct = () => {
     const wilayaName = wilaya ? wilaya.name : "";
     setFormData({ ...formData, wilaya: wilayaName, commune: "" });
 
-    setShippingPrice(shippingPrices[wilayaName] || 0 ); // Set shipping price based on selected wilaya
+    setShippingPrice(shippingPrices[wilayaName] || 0); // Set shipping price based on selected wilaya
   };
 
   const handleInputChange = (e) => {
@@ -335,30 +629,32 @@ const SingleProduct = () => {
   };
 
   const handleSubmit = (e) => {
-    setClickedProduct(product.title)
+    setClickedProduct(product.title);
     e.preventDefault();
     console.log(formData);
     fetch("https://cosmeticstore-2ijr.onrender.com/product", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      }).then((response) => response.json().then((formData) => console.log(formData)));
-    };
-  
-    // fetch("http://localhost:1337/product", {
-    //   method: "POST",
-    //   body: JSON.stringify(formdata),
-    //   headers: {
-    //     Accept: "application/json",
-    //     "Content-Type": "application/json",
-    //   },
-    // }).then((response) => response.json().then((formdata) => console.log(formdata)));
-  
-    // Handle form submission (e.g., send data to a server)
-  
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    }).then((response) =>
+      response.json().then((formData) => console.log(formData))
+    );
+  };
+
+  // fetch("http://localhost:1337/product", {
+  //   method: "POST",
+  //   body: JSON.stringify(formdata),
+  //   headers: {
+  //     Accept: "application/json",
+  //     "Content-Type": "application/json",
+  //   },
+  // }).then((response) => response.json().then((formdata) => console.log(formdata)));
+
+  // Handle form submission (e.g., send data to a server)
+
   const imgClicked = (clickedimg) => {
     handleImgChanger(clickedimg);
   };
@@ -370,17 +666,16 @@ const SingleProduct = () => {
     // }
     return "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load";
   };
- 
-  
+
   console.log(product.price);
-  const checkOldPrice = (price)=>{
+  const checkOldPrice = (price) => {
     if (price) {
-        return (<p>{price} دج</p>)
-    }else{
-        return
+      return <p>{price} دج</p>;
+    } else {
+      return;
     }
-  }
-  return(
+  };
+  return (
     <>
       <Navbar />
 
@@ -428,11 +723,11 @@ const SingleProduct = () => {
               </div>
               <div className="flex justify-between mt-2">
                 <span>Shipping</span>
-                <span>{shippingPrice}  دج</span>
+                <span>{shippingPrice} دج</span>
               </div>
               <div className="flex justify-between mt-2 font-bold text-lg">
                 <span>Total</span>
-                <span>{(product.price * quantity )+ shippingPrice} دج</span>
+                <span>{product.price * quantity + shippingPrice} دج</span>
               </div>
             </div>
           </div>
@@ -441,8 +736,7 @@ const SingleProduct = () => {
           <h1 className="text-2xl font-bold text-gray-800">{product.title}</h1>
           <div className="mt-2 flex flex-col justify-center items-start">
             <h3 className="text-red-500 line-through ">
-                {checkOldPrice(product.oldPrice)}
-              
+              {checkOldPrice(product.oldPrice)}
             </h3>
             <h2 className="text-green-500 ml-2 text-xl font-bold">
               {product.price} دج
@@ -451,48 +745,46 @@ const SingleProduct = () => {
           <p className="mt-4 text-gray-600">{product.desc}</p>
 
           {/* Options (if any) */}
-          
 
-         
           <form onSubmit={handleSubmit} className="mt-2">
             <div className="flex justify-between  items-center mb-2">
-            <div className="">
-              <label
-                className="block text-gray-700 font-semibold mb-2"
-                htmlFor="fullName"
-              >
-                Full Name
-              </label>
-              <input
-                type="text"
-                id="fullName"
-                name="fullName"
-                className="w-full px-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
-                placeholder="Enter your full name"
-                value={formData.fullName}
-                onChange={handleInputChange}
-                required
-              />
+              <div className="">
+                <label
+                  className="block text-gray-700 font-semibold mb-2"
+                  htmlFor="fullName"
+                >
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  className="w-full px-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  placeholder="Enter your full name"
+                  value={formData.fullName}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="">
+                <label
+                  className="block text-gray-700 font-semibold mb-2"
+                  htmlFor="quantity"
+                >
+                  Quantity
+                </label>
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  className="w-16 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  value={quantity}
+                  onChange={handleQuantityChange}
+                  min="1"
+                />
+              </div>
             </div>
-            <div className="">
-            <label
-              className="block text-gray-700 font-semibold mb-2"
-              htmlFor="quantity"
-            >
-              Quantity
-            </label>
-            <input
-              type="number"
-              id="quantity"
-              name="quantity"
-              className="w-16 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
-              value={quantity}
-              onChange={handleQuantityChange}
-              min="1"
-            />
-          </div>
-            </div>
-            
+
             <div className="mb-4">
               <label
                 className="block text-gray-700 font-semibold mb-2"
@@ -532,7 +824,7 @@ const SingleProduct = () => {
                 </option>
                 {wilayas.map((wilaya) => (
                   <option key={wilaya.id} value={wilaya.id}>
-                   {wilaya.id}- {wilaya.name} 
+                    {wilaya.id}- {wilaya.name}
                   </option>
                 ))}
               </select>
@@ -582,7 +874,7 @@ const SingleProduct = () => {
               </div>
               <div className="flex justify-between mt-2">
                 <span>Shipping</span>
-                <span>{shippingPrice}  دج</span>
+                <span>{shippingPrice} دج</span>
               </div>
               <div className="flex justify-between mt-2 font-bold text-lg">
                 <span>Total</span>
@@ -593,8 +885,6 @@ const SingleProduct = () => {
         </div>
       </section>
     </>
-  )
-    
-
+  );
 };
 export default SingleProduct;
