@@ -10,8 +10,14 @@ const products = [
   {
     id: 1,
     title: "La roshe-posay Effaclar K(+)",
-    desc: "Ne laissez pas les imperfections vous empêcher de rayonner! Adoptez notre Soin Effaclar K+ de La Roche-Posay dès aujourd'hui et retrouvez une peau saine et équilibrée.",
+    desc: "لا تدع العيوب تمنعك من التألق! استخدم منتج Effaclar K+ من La Roche-Posay اليوم واستمتع ببشرة صحية ومتوازنة.",
+    description: "شحم الحلب المتلألئ سوبليم تان - 150 ملSOLEIL DES ILES شحم الحلب المتلألئ - SPF 0 - رائحة الجزر - 150 مل غني بمونوي دي تاهيتي المعروف بخصائصه المرطبة والتنعيم ، هذا الشحوم الحلب المرشوشة باللآلئ الذهبية تزين البشرة بانعكاسات ذهبية ومشرقة بشكل طبيعي. تأثير نحاسي. يتسامح بشكل خاص مع البشرة المدبوغة والباهتة.اسم المنتج SOLEIL DES ILES Bron Shimmering Milking GreaseCategory بعد عامنوع المنتج دهن الحلب الخصائص ارماس - عطور عطر الجزرالسعة 150 مل",
     img: "https://i.ibb.co/PG5rLjQ/3-copy-2.png",
+    img2: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    img3: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    img4: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    imgdesc1: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    imgdesc2: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
     star: "https://cdn-icons-png.flaticon.com/128/10801/10801392.png",
     oldPrice: 4500,
     price: 3999,
@@ -20,9 +26,15 @@ const products = [
   {
     id: 2,
     title: "Avéne cleanance gel nettoyant 400 Ml",
-    desc: "Ne laissez pas les impuretés ternir votre éclat naturel! Adoptez le Gel Nettoyant Cleanance d'Avene dès aujourd'hui et retrouvez une peau équilibrée et éclatante de santé.",
-    description: "hi this is avene desctiption",
+    desc: "لا تدع الشوائب تفسد إشراقتك الطبيعية! استخدم جل التنظيف Cleanance من Avène اليوم واستمتع ببشرة متوازنة ومتألقة.",
+    description: "شحم الحلب المتلألئ سوبليم تان - 150 ملSOLEIL DES ILES شحم الحلب المتلألئ - SPF 0 - رائحة الجزر - 150 مل غني بمونوي دي تاهيتي المعروف بخصائصه المرطبة والتنعيم ، هذا الشحوم الحلب المرشوشة باللآلئ الذهبية تزين البشرة بانعكاسات ذهبية ومشرقة بشكل طبيعي. تأثير نحاسي. يتسامح بشكل خاص مع البشرة المدبوغة والباهتة.اسم المنتج SOLEIL DES ILES Bron Shimmering Milking GreaseCategory بعد عامنوع المنتج دهن الحلب الخصائص ارماس - عطور عطر الجزرالسعة 150 مل",
     img: "https://i.ibb.co/f4g1DvJ/3-copy.png",
+     
+    img2: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    img3: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    img4: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    imgdesc1: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    imgdesc2: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
     star: "",
     oldPrice: null,
     price: 4499,
@@ -31,8 +43,15 @@ const products = [
   {
     id: 3,
     title: "Cerave Gel Nettoyant Anti-Rugosités​ 236ml",
-    desc: "Nettoyant moussant qui favorise l'élimination des rugosités pour une peau lisse",
+    desc: "جل منظف يساعد في إزالة التكتلات للحصول على بشرة ناعمة.",
+    description: "شحم الحلب المتلألئ سوبليم تان - 150 ملSOLEIL DES ILES شحم الحلب المتلألئ - SPF 0 - رائحة الجزر - 150 مل غني بمونوي دي تاهيتي المعروف بخصائصه المرطبة والتنعيم ، هذا الشحوم الحلب المرشوشة باللآلئ الذهبية تزين البشرة بانعكاسات ذهبية ومشرقة بشكل طبيعي. تأثير نحاسي. يتسامح بشكل خاص مع البشرة المدبوغة والباهتة.اسم المنتج SOLEIL DES ILES Bron Shimmering Milking GreaseCategory بعد عامنوع المنتج دهن الحلب الخصائص ارماس - عطور عطر الجزرالسعة 150 مل",
     img: "https://i.ibb.co/wLC72w8/4.png",
+     
+    img2: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    img3: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    img4: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    imgdesc1: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    imgdesc2: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
     star: "",
     oldPrice: 4000,
     price: 3500,
@@ -41,8 +60,15 @@ const products = [
   {
     id: 4,
     title: "La roshe posay Cicaplast Baume B5",
-    desc: "Ce baume prend soin de votre peau en profondeur. 💧 Pour des lèvres gercées, des zones sèches ou des petites irritations, le Baume B5 Cicaplast est votre allié de confiance.",
+    desc: "هذه المرهم يعنى ببشرتك بعمق. 💧 للشفتين المتشققتين، المناطق الجافة أو التهيجات الصغيرة، يعتبر Baume B5 Cicaplast رفيقك الموثوق.",
+    description: "شحم الحلب المتلألئ سوبليم تان - 150 ملSOLEIL DES ILES شحم الحلب المتلألئ - SPF 0 - رائحة الجزر - 150 مل غني بمونوي دي تاهيتي المعروف بخصائصه المرطبة والتنعيم ، هذا الشحوم الحلب المرشوشة باللآلئ الذهبية تزين البشرة بانعكاسات ذهبية ومشرقة بشكل طبيعي. تأثير نحاسي. يتسامح بشكل خاص مع البشرة المدبوغة والباهتة.اسم المنتج SOLEIL DES ILES Bron Shimmering Milking GreaseCategory بعد عامنوع المنتج دهن الحلب الخصائص ارماس - عطور عطر الجزرالسعة 150 مل",
     img: "https://i.ibb.co/D52Qp8c/3.png",
+     
+    img2: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    img3: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    img4: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    imgdesc1: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    imgdesc2: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
     star: "",
     oldPrice: 4000,
     price: 3900,
@@ -51,8 +77,15 @@ const products = [
   {
     id: 5,
     title: "Ceravie Hydrating Facial Cleanser 437ml",
-    desc: "Il élimine délicatement le maquillage et les impuretés, laissant la peau douce.💙 Pour une expérience agréable, spécialement pour les peaux sensibles et sèches.",
+    desc: "يزيل بلطف المكياج والشوائب، مما يجعل البشرة ناعمة.💙 لتجربة ممتعة، خاصة للبشرة الحساسة والجافة.",
+    description: "شحم الحلب المتلألئ سوبليم تان - 150 ملSOLEIL DES ILES شحم الحلب المتلألئ - SPF 0 - رائحة الجزر - 150 مل غني بمونوي دي تاهيتي المعروف بخصائصه المرطبة والتنعيم ، هذا الشحوم الحلب المرشوشة باللآلئ الذهبية تزين البشرة بانعكاسات ذهبية ومشرقة بشكل طبيعي. تأثير نحاسي. يتسامح بشكل خاص مع البشرة المدبوغة والباهتة.اسم المنتج SOLEIL DES ILES Bron Shimmering Milking GreaseCategory بعد عامنوع المنتج دهن الحلب الخصائص ارماس - عطور عطر الجزرالسعة 150 مل",
     img: "https://i.ibb.co/0rFVJP1/2.png",
+     
+    img2: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    img3: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    img4: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    imgdesc1: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    imgdesc2: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
     star: "",
     oldPrice: 4700,
     price: 4300,
@@ -61,8 +94,15 @@ const products = [
   {
     id: 6,
     title: "The Ordinary Hyaluronic Acid 2% + B5",
-    desc: "Sa texture légère et non grasse pénètre rapidement dans la peau, offrant une hydratation intense et durable. Convient à tous les types de peau, même les plus sensibles.",
+    desc: "تتمتع هذه التركيبة الخفيفة وغير الدهنية بقدرة على التغلغل بسرعة في البشرة، مما يوفر ترطيبًا مكثفًا وطويل الأمد. تناسب جميع أنواع البشرة، حتى الحساسة منها.",
+    description: "شحم الحلب المتلألئ سوبليم تان - 150 ملSOLEIL DES ILES شحم الحلب المتلألئ - SPF 0 - رائحة الجزر - 150 مل غني بمونوي دي تاهيتي المعروف بخصائصه المرطبة والتنعيم ، هذا الشحوم الحلب المرشوشة باللآلئ الذهبية تزين البشرة بانعكاسات ذهبية ومشرقة بشكل طبيعي. تأثير نحاسي. يتسامح بشكل خاص مع البشرة المدبوغة والباهتة.اسم المنتج SOLEIL DES ILES Bron Shimmering Milking GreaseCategory بعد عامنوع المنتج دهن الحلب الخصائص ارماس - عطور عطر الجزرالسعة 150 مل",
     img: "https://i.ibb.co/kqZrTvD/1.png",
+     
+    img2: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    img3: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    img4: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    imgdesc1: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    imgdesc2: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
     star: "",
     oldPrice: 5600,
     price: 4850,
@@ -71,8 +111,15 @@ const products = [
   {
     id: 7,
     title: "Ordinary Niacinamide 10% + Zinc 1%",
-    desc: "Ne laissez pas les imperfections ternir votre éclat naturel! Adoptez notre Sérum Niacinamide 10% + Zinc 1% de The Ordinary dès aujourd'hui et retrouvez une peau éclatante de santé.",
+    desc: "لا تدع العيوب تفسد إشراقتك الطبيعية! استخدم سيروم Niacinamide 10% + Zinc 1% من The Ordinary اليوم واستمتع ببشرة صحية ومتألقة.",
+    description: "شحم الحلب المتلألئ سوبليم تان - 150 ملSOLEIL DES ILES شحم الحلب المتلألئ - SPF 0 - رائحة الجزر - 150 مل غني بمونوي دي تاهيتي المعروف بخصائصه المرطبة والتنعيم ، هذا الشحوم الحلب المرشوشة باللآلئ الذهبية تزين البشرة بانعكاسات ذهبية ومشرقة بشكل طبيعي. تأثير نحاسي. يتسامح بشكل خاص مع البشرة المدبوغة والباهتة.اسم المنتج SOLEIL DES ILES Bron Shimmering Milking GreaseCategory بعد عامنوع المنتج دهن الحلب الخصائص ارماس - عطور عطر الجزرالسعة 150 مل",
     img: "https://i.ibb.co/FKtM3WT/1-copy-3.png",
+     
+    img2: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    img3: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    img4: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    imgdesc1: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
+    imgdesc2: "https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
     star: "",
     oldPrice: 3800,
     price: 3450,
