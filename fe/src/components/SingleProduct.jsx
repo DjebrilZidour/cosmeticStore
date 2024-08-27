@@ -21,6 +21,7 @@ const products = [
     id: 2,
     title: "Avéne cleanance gel nettoyant 400 Ml",
     desc: "Ne laissez pas les impuretés ternir votre éclat naturel! Adoptez le Gel Nettoyant Cleanance d'Avene dès aujourd'hui et retrouvez une peau équilibrée et éclatante de santé.",
+    description:"hi this is avene desctiption",
     img: "https://i.ibb.co/f4g1DvJ/3-copy.png",
     star: "",
     oldPrice: null,
@@ -134,17 +135,6 @@ const SingleProduct = () => {
     );
     navigate("/thank-you");
   };
-
-  // fetch("http://localhost:1337/product", {
-  //   method: "POST",
-  //   body: JSON.stringify(formdata),
-  //   headers: {
-  //     Accept: "application/json",
-  //     "Content-Type": "application/json",
-  //   },
-  // }).then((response) => response.json().then((formdata) => console.log(formdata)));
-
-  // Handle form submission (e.g., send data to a server)
 
   const imgClicked = (clickedimg) => {
     handleImgChanger(clickedimg);
@@ -373,6 +363,16 @@ const SingleProduct = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="px-24 mb-12">
+        <div className="flex flex-col justify-center items-end gap-8  ">
+          <h1 className="text-5xl">wasf el montaj</h1>
+          <p className="text-2xl text-end">
+       
+           {product.description}
+          </p>
+          <img src={product.img2} alt="" />
         </div>
       </section>
     </>
