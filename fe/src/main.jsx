@@ -7,6 +7,7 @@ import ClientForm from "./components/ClientForm.jsx";
 import SingleProduct from "./components/SingleProduct.jsx";
 import Admin from "./pages/Admin.jsx";
 import AdminVer from "./pages/AdminVer.jsx";
+import ThankYou from "./pages/ThankYou.jsx";
 
 // Product list
 const products = [
@@ -76,7 +77,10 @@ const router = createBrowserRouter([
     path: "/products/:id/:title",
     element: <SingleProduct products={products} />, // Pass products as prop
   },
-  
+  {
+    path:"/thank-you",
+    element: <ThankYou />,
+  }
   
 ]);
 

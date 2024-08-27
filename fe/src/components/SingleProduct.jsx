@@ -1,7 +1,7 @@
 import { Link } from "react-scroll";
 import React, { useState } from "react";
 import Navbar from "./Navbar";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import wilayas from "./utils/wilayas";
 import { useLocation } from "react-router-dom";
 import shippingPrices from "./utils/shippingPrices";
@@ -96,8 +96,6 @@ const SingleProduct = () => {
   });
   const [shippingPrice, setShippingPrice] = useState(0);
 
- 
-
   const handleWilayaChange = (e) => {
     const wilayaId = e.target.value;
     console.log(wilayaId);
@@ -119,7 +117,7 @@ const SingleProduct = () => {
   const handleQuantityChange = (e) => {
     setQuantity(e.target.value);
   };
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     setClickedProduct(product.title);
     e.preventDefault();
@@ -134,6 +132,7 @@ const SingleProduct = () => {
     }).then((response) =>
       response.json().then((formData) => console.log(formData))
     );
+    navigate("/thank-you");
   };
 
   // fetch("http://localhost:1337/product", {
@@ -172,7 +171,7 @@ const SingleProduct = () => {
       <Navbar />
 
       <section className="flex flex-col md:flex-row w-full ">
-        <div className="md:w-1/2 p-16">
+        <div className="md:w-1/2 md:p-16 p-4">
           <div className=" flex flex-col gap-4">
             <div className="flex flex-col justify-center items-center gap-4 ">
               <img className="rounded-xl w-full" src={product.img} alt="" />
@@ -224,22 +223,22 @@ const SingleProduct = () => {
             </div>
           </div>
         </div>
-        <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0 p-12">
-          <h1 className="text-2xl font-bold text-gray-800">{product.title}</h1>
-          <div className="mt-2 flex flex-col justify-center items-start">
-            <h3 className="text-red-500 line-through ">
+        <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0 md:p-12 md:text-start text-center flex flex-col justify-center items-centemd:items-start">
+          <h1 className="text-4xl font-bold text-gray-800">{product.title}</h1>
+          <p className="mt-4 text-gray-600 text-xl p-2">{product.desc}</p>
+          <div className="mt-2 flex flex-col justify-center md:items-start">
+            <h3 className="text-red-500 line-through text-3xl">
               {checkOldPrice(product.oldPrice)}
             </h3>
-            <h2 className="text-green-500 ml-2 text-xl font-bold">
+            <h2 className="text-green-500 ml-2 text-5xl font-bold">
               {product.price} دج
             </h2>
           </div>
-          <p className="mt-4 text-gray-600">{product.desc}</p>
 
           {/* Options (if any) */}
 
           <form onSubmit={handleSubmit} className="mt-2">
-            <div className="flex justify-between  items-center mb-2">
+            <div className="flex md:flex-row flex-col-reverse justify-center gap-2 md:gap-8 items-center mb-2">
               <div className="">
                 <label
                   className="block text-gray-700 font-semibold mb-2"
@@ -251,7 +250,7 @@ const SingleProduct = () => {
                   type="text"
                   id="fullName"
                   name="fullName"
-                  className="w-full px-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  className="w-full px-24 md:px-12 lg:px-24 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
                   placeholder="Enter your full name"
                   value={formData.fullName}
                   onChange={handleInputChange}
