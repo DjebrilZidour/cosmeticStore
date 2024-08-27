@@ -263,6 +263,50 @@ const SingleProduct = () => {
           "Kadiria",
           "Haizer"
         ],
+      },
+      {
+        "id": 16, // J'ai attribué l'ID 16 à la wilaya d'Alger. Vous pouvez le modifier si nécessaire.
+        "name": "Alger",
+        "communes": [
+          "Alger-Centre",
+          "Bab El Oued",
+          "Bologhine",
+          "Casbah",
+          "El Madania",
+          "Hydra",
+          "Rais Hamidou",
+          "Sidi Moussa",
+          "Oued Koriche",
+          "Birtouta",
+          "Tessala El Merdja",
+          "Les Eucalyptus",
+          "Bir Mourad Raïs",
+          "El Biar",
+          "Bouzareah",
+          "Beni Messous",
+          "Dar El Beïda",
+          "Ain Taya",
+          "Bab Ezzouar",
+          "Bordj El Bahri",
+          "Bordj El Kiffan",
+          "El Marsa",
+          "Mohammadia",
+          "Baraki",
+          "Birkhadem",
+          "Djasr Kasentina",
+          "Sehaoula",
+          "Cheraga",
+          "Ain Benian",
+          "Dely Ibrahim",
+          "Hammamet",
+          "Ouled Fayet",
+          "Draria",
+          "Baba Hassan",
+          "Douira",
+          "El Achour",
+          "Khraisssia",
+          "El Harrach"
+        ]
       }
     // Add remaining wilayas with their respective communes
   ];
