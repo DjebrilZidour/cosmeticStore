@@ -207,7 +207,7 @@ const SingleProduct = () => {
     <>
       <Navbar />
 
-      <section className="flex flex-col-reverse md:flex-row w-full ">
+      <section className="flex flex-col-reverse md:flex-row w-full md:px-16">
         <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0 md:p-12 md:text-start text-center flex flex-col justify-center items-centemd:items-start">
           <h1 className="text-4xl font-bold text-gray-800">{product.title}</h1>
           <p className="mt-4 text-gray-600 text-xl p-2">{product.desc}</p>
@@ -222,7 +222,7 @@ const SingleProduct = () => {
 
           {/* Options (if any) */}
 
-          <form onSubmit={handleSubmit} className="mt-2 md:p-0 px-4">
+          <form id="buy" onSubmit={handleSubmit} className="mt-2 md:p-0 px-4">
             <div className="flex flex-col gap-4">
 
               <div className="flex flex-col justify-center items-end">
@@ -407,16 +407,20 @@ const SingleProduct = () => {
           </div>
         </div>
       </section>
-      <section className="md:px-24 px-6 mb-12 my-12">
+      <section className="md:px-24 px-6 mb-12 my-12 mb-36">
         <div className="flex flex-col justify-center items-end gap-8  ">
           <h1 className="md:text-5xl text-4xl">وصف المنتج</h1>
           <p className="md:text-2xl text-xl w-full text-end">{product.description}</p>
-          <div>
-          <img src={product.img2} alt="" />
-          <img src={product.img3} alt="" />
+          <div className="flex justify-center items-center gap-8">
+          <img className="w-1/3" src={product.img2} alt="" />
+          <img className="w-1/3" src={product.img3} alt="" />
           </div>
         </div>
       </section>
+      <Link to="buy"spy={true} smooth={true} offset={50} duration={500}>
+      <button className="fixed inset-x-0 bottom-0  bg-pink-100 text-white font-semibold py-2 rounded-lg hover:bg-pink-800 transition duration-300 m-4 text-pink-500 hover:text-white">commander</button>
+
+      </Link>
     </>
   );
 };
