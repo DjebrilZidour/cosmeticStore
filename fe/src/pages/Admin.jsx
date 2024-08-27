@@ -2,7 +2,7 @@ import React, { useState } from "react";
 const Admin = () => {
     const [myCommands, setMyCommands] = useState([]);
     const getCommands = () => {
-        fetch("http://localhost:1337/product", {
+        fetch("https://cosmeticstore-2ijr.onrender.com/product", {
           method: "GET",
           headers: {
             Accept: "application/json",
