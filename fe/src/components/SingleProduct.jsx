@@ -21,7 +21,7 @@ const products = [
     id: 2,
     title: "Avéne cleanance gel nettoyant 400 Ml",
     desc: "Ne laissez pas les impuretés ternir votre éclat naturel! Adoptez le Gel Nettoyant Cleanance d'Avene dès aujourd'hui et retrouvez une peau équilibrée et éclatante de santé.",
-    description:"hi this is avene desctiption",
+    description: "hi this is avene desctiption",
     img: "https://i.ibb.co/f4g1DvJ/3-copy.png",
     star: "",
     oldPrice: null,
@@ -160,7 +160,172 @@ const SingleProduct = () => {
     <>
       <Navbar />
 
-      <section className="flex flex-col md:flex-row w-full ">
+      <section className="flex flex-col-reverse md:flex-row w-full ">
+        <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0 md:p-12 md:text-start text-center flex flex-col justify-center items-centemd:items-start">
+          <h1 className="text-4xl font-bold text-gray-800">{product.title}</h1>
+          <p className="mt-4 text-gray-600 text-xl p-2">{product.desc}</p>
+          <div className="mt-2 flex flex-col justify-center md:items-start">
+            <h3 className="text-red-500 line-through text-3xl">
+              {checkOldPrice(product.oldPrice)}
+            </h3>
+            <h2 className="text-green-500 ml-2 text-5xl font-bold">
+              {product.price} دج
+            </h2>
+          </div>
+
+          {/* Options (if any) */}
+
+          <form onSubmit={handleSubmit} className="mt-2 md:p-0 px-4">
+            <div className="flex flex-col gap-4">
+
+              <div className="flex flex-col justify-center items-end">
+                <label
+                  className="block text-gray-700 font-semibold mb-2"
+                  htmlFor="quantity"
+                >
+                  Quantity
+                </label>
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  className="w-16 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  value={quantity}
+                  onChange={handleQuantityChange}
+                  min="1"
+                />
+              </div>
+              <div className="flex justify-center items-center gap-4">
+             
+              <div className="text-right w-1/2">
+                <label
+                  className="block text-gray-700 font-semibold mb-2"
+                  htmlFor="phoneNumber"
+                >
+                  رقم الهاتف
+                </label>
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  pattern="^ *(0|\+ *2 *1 *3) *((5|6|7) *(\d *){8}|(4 *9|2 *7|2 *9|3 *2|3 *3|3 *4|2 *5|2 *6|3 *7|4 *3|4 *6|2 *1|2 *3|3 *6|4 *8|3 *8|3 *1|4 *5|3 *5|4 *1|2 *4) *(\d *){6}) *$"
+                  className="w-full px-4 py-2 border border-pink-500  rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 text-right text-2xl"
+                  placeholder="رقم الهاتف"
+                  value={formData.phoneNumber}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="text-right w-1/2">
+                <label
+                  className="block text-gray-700 font-semibold mb-2"
+                  htmlFor="fullName"
+                >
+                  الاسم واللقب
+                </label>
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  className="w-full px-4 py-2 border border-pink-500  rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 text-right text-2xl"
+                  placeholder="الاسم واللقب"
+                  value={formData.fullName}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="flex justify-center items-center gap-4">
+              <div className="w-1/2 text-right">
+                <label
+                  className="block text-gray-700 font-semibold mb-2"
+                  htmlFor="wilaya"
+                >
+                  الولاية
+                </label>
+                <select
+                  id="wilaya"
+                  name="wilaya"
+                  className="w-full px-4 py-2 border border-pink-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 text-right text-2xl"
+                  value={selectedWilaya}
+                  onChange={handleWilayaChange}
+                  required
+                >
+                  <option value="" disabled selected>
+                    إختر الولاية
+                  </option>
+                  {wilayas.map((wilaya) => (
+                    <option key={wilaya.id} value={wilaya.id}>
+                      {wilaya.id}- {wilaya.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {communes.length >= 0 && (
+                <div className="w-1/2 text-right">
+                  <label
+                    className="block text-gray-700 font-semibold mb-2"
+                    htmlFor="commune"
+                  >
+                    البلدية
+                  </label>
+                  <select
+                    id="commune"
+                    name="commune"
+                    className="w-full px-4 py-2 border border-pink-500  rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 text-right text-2xl"
+                    value={formData.commune}
+                    onChange={handleInputChange}
+                    required
+                  >
+                    <option value="1" disabled selected>
+                      البلدية
+                    </option>
+                    {communes.map((commune, index) => (
+                      <option key={index} value={commune}>
+                        {commune}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-pink-400 text-white font-semibold py-2 rounded-lg hover:bg-pink-500 transition duration-300"
+            >
+              Commander Maintenant
+            </button>
+            </div>
+
+          
+            
+            
+            <div className="mt-8 p-4 rounded-lg bg-pink-100">
+  
+              <h2 className="text-xl font-semibold text-gray-800">
+                Order Summary
+              </h2>
+              <div className="mt-2">
+                <div className="flex justify-between">
+                  <span>{product.price * quantity} دج</span>
+                  <span>سعر الطلب</span>
+                </div>
+                <div className="flex justify-between mt-2">
+                  <span>{shippingPrice} دج</span>
+                  <span>سعر التوصيل</span>
+                </div>
+                <div className="flex justify-between mt-2 font-bold text-2xl">
+                  <span>{product.price * quantity + shippingPrice} دج</span>
+                  <span>المجموع</span>
+                </div>
+              </div>
+            </div>
+          </form>
+          
+        </div>
         <div className="md:w-1/2 md:p-16 p-4">
           <div className=" flex flex-col gap-4">
             <div className="flex flex-col justify-center items-center gap-4 ">
@@ -193,186 +358,16 @@ const SingleProduct = () => {
               </div>
             </div>
           </div>
-          <div className="mt-8 bg-gray-50 p-4 rounded-lg md:block hidden">
-            <h2 className="text-xl font-semibold text-gray-800">
-              Order Summary
-            </h2>
-            <div className="mt-2">
-              <div className="flex justify-between">
-                <span>Subtotal</span>
-                <span>{product.price * quantity} دج</span>
-              </div>
-              <div className="flex justify-between mt-2">
-                <span>Shipping</span>
-                <span>{shippingPrice} دج</span>
-              </div>
-              <div className="flex justify-between mt-2 font-bold text-lg">
-                <span>Total</span>
-                <span>{product.price * quantity + shippingPrice} دج</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0 md:p-12 md:text-start text-center flex flex-col justify-center items-centemd:items-start">
-          <h1 className="text-4xl font-bold text-gray-800">{product.title}</h1>
-          <p className="mt-4 text-gray-600 text-xl p-2">{product.desc}</p>
-          <div className="mt-2 flex flex-col justify-center md:items-start">
-            <h3 className="text-red-500 line-through text-3xl">
-              {checkOldPrice(product.oldPrice)}
-            </h3>
-            <h2 className="text-green-500 ml-2 text-5xl font-bold">
-              {product.price} دج
-            </h2>
-          </div>
-
-          {/* Options (if any) */}
-
-          <form onSubmit={handleSubmit} className="mt-2">
-            <div className="flex md:flex-row flex-col-reverse justify-center gap-2 md:gap-8 items-center mb-2">
-              <div className="">
-                <label
-                  className="block text-gray-700 font-semibold mb-2"
-                  htmlFor="fullName"
-                >
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  className="w-full px-24 md:px-12 lg:px-24 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
-                  placeholder="Enter your full name"
-                  value={formData.fullName}
-                  onChange={handleInputChange}
-                  required
-                />
-              </div>
-              <div className="">
-                <label
-                  className="block text-gray-700 font-semibold mb-2"
-                  htmlFor="quantity"
-                >
-                  Quantity
-                </label>
-                <input
-                  type="number"
-                  id="quantity"
-                  name="quantity"
-                  className="w-16 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
-                  value={quantity}
-                  onChange={handleQuantityChange}
-                  min="1"
-                />
-              </div>
-            </div>
-
-            <div className="mb-4">
-              <label
-                className="block text-gray-700 font-semibold mb-2"
-                htmlFor="phoneNumber"
-              >
-                Phone Number
-              </label>
-              <input
-                type="tel"
-                id="phoneNumber"
-                name="phoneNumber"
-                pattern="^ *(0|\+ *2 *1 *3) *((5|6|7) *(\d *){8}|(4 *9|2 *7|2 *9|3 *2|3 *3|3 *4|2 *5|2 *6|3 *7|4 *3|4 *6|2 *1|2 *3|3 *6|4 *8|3 *8|3 *1|4 *5|3 *5|4 *1|2 *4) *(\d *){6}) *$"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
-                placeholder="Enter your phone number"
-                value={formData.phoneNumber}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label
-                className="block text-gray-700 font-semibold mb-2"
-                htmlFor="wilaya"
-              >
-                Wilaya
-              </label>
-              <select
-                id="wilaya"
-                name="wilaya"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
-                value={selectedWilaya}
-                onChange={handleWilayaChange}
-                required
-              >
-                <option value="" disabled selected>
-                  Select Wilaya
-                </option>
-                {wilayas.map((wilaya) => (
-                  <option key={wilaya.id} value={wilaya.id}>
-                    {wilaya.id}- {wilaya.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            {communes.length >= 0 && (
-              <div className="mb-4">
-                <label
-                  className="block text-gray-700 font-semibold mb-2"
-                  htmlFor="commune"
-                >
-                  Commune
-                </label>
-                <select
-                  id="commune"
-                  name="commune"
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
-                  value={formData.commune}
-                  onChange={handleInputChange}
-                  required
-                >
-                  <option value="1" disabled selected>
-                    Select Commune
-                  </option>
-                  {communes.map((commune, index) => (
-                    <option key={index} value={commune}>
-                      {commune}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            )}
-            <button
-              type="submit"
-              className="w-full bg-pink-400 text-white font-semibold py-2 rounded-lg hover:bg-pink-500 transition duration-300"
-            >
-              Commander Maintenant
-            </button>
-          </form>
-          <div className="mt-8 bg-gray-50 p-4 rounded-lg md:hidden block">
-            <h2 className="text-xl font-semibold text-gray-800">
-              Order Summary
-            </h2>
-            <div className="mt-2">
-              <div className="flex justify-between">
-                <span>Subtotal</span>
-                <span>{product.price * quantity} دج</span>
-              </div>
-              <div className="flex justify-between mt-2">
-                <span>Shipping</span>
-                <span>{shippingPrice} دج</span>
-              </div>
-              <div className="flex justify-between mt-2 font-bold text-lg">
-                <span>Total</span>
-                <span>{product.price * quantity + shippingPrice} دج</span>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
-      <section className="px-24 mb-12">
+      <section className="md:px-24 px-6 mb-12 my-12">
         <div className="flex flex-col justify-center items-end gap-8  ">
-          <h1 className="text-5xl">wasf el montaj</h1>
-          <p className="text-2xl text-end">
-       
-           {product.description}
-          </p>
+          <h1 className="md:text-5xl text-4xl">وصف المنتج</h1>
+          <p className="md:text-2xl text-xl w-full text-end">{product.description}</p>
+          <div>
           <img src={product.img2} alt="" />
+          <img src={product.img3} alt="" />
+          </div>
         </div>
       </section>
     </>
