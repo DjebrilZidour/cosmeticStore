@@ -294,7 +294,7 @@ const SingleProduct = () => {
     setClickedProduct(product.title)
     e.preventDefault();
     console.log(formData);
-    fetch("http://localhost:1337/product", {
+    fetch("https://cosmeticstore-2ijr.onrender.com/product", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
