@@ -342,6 +342,7 @@ const SingleProduct = () => {
             <button
               type="submit"
               className="w-full bg-pink-400 text-white font-semibold py-2 rounded-lg hover:bg-pink-500 transition duration-300"
+              onClick={handleSubmit}
             >
               Commander Maintenant
             </button>
