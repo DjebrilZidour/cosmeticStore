@@ -6,6 +6,7 @@ import About from "./components/About.jsx";
 import ClientForm from "./components/ClientForm.jsx";
 import SingleProduct from "./components/SingleProduct.jsx";
 import Admin from "./pages/Admin.jsx";
+import AdminVer from "./pages/AdminVer.jsx";
 
 // Product list
 const products = [
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
   {
     path: "/admin",
     element: <Admin />,
+  },
+  {
+    path: "/admin-verification",
+    element: <AdminVer />
   },
   {
     path: "/clientform",
