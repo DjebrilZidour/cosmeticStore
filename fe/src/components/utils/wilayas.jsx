@@ -92,17 +92,7 @@ const wilayas = [
         "تاجرونة",
       ],
     },
-    {
-      id: 4,
-      name: "Oum El Bouaghi",
-      communes: [
-        "Oum El Bouaghi",
-        "Aïn Beïda",
-        "Ksar Sbahi",
-        "Aïn M'lila",
-        "Sigus",
-      ],
-    },
+
     {
       id: 5,
       name: "باتنة",
