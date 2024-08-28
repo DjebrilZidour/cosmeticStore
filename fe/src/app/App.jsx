@@ -10,17 +10,7 @@ function App() {
       <Navbar />
       <SecNav />
 
-      <div className="flex justify-center items-center w-full">
 
-      <h1 className="uppercase text-5xl text-center text-red-500">ce site web est en maintenace 
-        <br />on s'excuse
-      </h1>
-
-      </div>
-      <div className=" flex-col justify-center items-center">
-          <Products />
-        </div>
-{/* 
       <div
         id="home"
         className="flex justify-center items-center flex-col gap-8 w-full "
@@ -116,7 +106,7 @@ function App() {
             </button>
           </div>
         </div>
-      </div> */}
+      </div>
     </section>
   );
 }
