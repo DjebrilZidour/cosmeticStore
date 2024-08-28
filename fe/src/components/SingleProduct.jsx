@@ -267,7 +267,7 @@ const SingleProduct = () => {
 
       <section
         id="buy"
-        className="flex flex-col-reverse md:flex-row w-full md:px-32 my-12"
+        className="flex flex-col-reverse md:flex-row w-full md:px-24 my-12 lg:mx-12 justify-center items-center"
       >
         <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0 md:p-4 md:text-start text-center flex flex-col justify-center items-centemd:items-start">
           <h1 className="md:text-3xl font-bold text-gray-800 text-3xl p-4">
@@ -290,18 +290,18 @@ const SingleProduct = () => {
           <form onSubmit={handleSubmit} className="mt-2 md:p-0 px-4">
             <div className="flex flex-col gap-4">
               {/* Quantity Field (Optional) */}
-              <div className="flex flex-col justify-center items-end">
+              <div className="flex flex-row-reverse justify-start items-center gap-4">
                 <label
                   className="block text-gray-700 font-semibold mb-2"
-                  htmlFor="quantity"
+                  htmlFor="wilaya"
                 >
-                  Quantity
+                  :الكمية 
                 </label>
                 <input
                   type="number"
                   id="quantity"
                   name="quantity"
-                  className="w-16 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  className="w-24 px-4 py-2 border rounded-lg border-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-500"
                   value={quantity}
                   onChange={handleQuantityChange}
                   min="1"
@@ -312,12 +312,6 @@ const SingleProduct = () => {
               <div className="flex justify-center items-center gap-4">
                 {/* Phone Number Field */}
                 <div className="text-right w-1/2">
-                  <label
-                    className="block text-gray-700 font-semibold mb-2"
-                    htmlFor="phoneNumber"
-                  >
-                    رقم الهاتف
-                  </label>
                   <input
                     type="tel"
                     id="phoneNumber"
@@ -333,12 +327,6 @@ const SingleProduct = () => {
 
                 {/* Full Name Field */}
                 <div className="text-right w-1/2">
-                  <label
-                    className="block text-gray-700 font-semibold mb-2"
-                    htmlFor="fullName"
-                  >
-                    الاسم واللقب
-                  </label>
                   <input
                     type="text"
                     id="fullName"
@@ -357,12 +345,6 @@ const SingleProduct = () => {
                 {/* Commune Field */}
                 {communes.length >= 0 && (
                   <div className="w-1/2 text-right">
-                    <label
-                      className="block text-gray-700 font-semibold mb-2"
-                      htmlFor="commune"
-                    >
-                      البلدية
-                    </label>
                     <select
                       id="commune"
                       name="commune"
@@ -385,12 +367,6 @@ const SingleProduct = () => {
 
                 {/* Wilaya Field */}
                 <div className="w-1/2 text-right">
-                  <label
-                    className="block text-gray-700 font-semibold mb-2"
-                    htmlFor="wilaya"
-                  >
-                    الولاية
-                  </label>
                   <select
                     id="wilaya"
                     name="wilaya"
@@ -445,28 +421,32 @@ const SingleProduct = () => {
         <div className="md:w-1/2 md:p-4 p-4">
           <div className=" flex flex-col gap-4">
             <div className="flex flex-col justify-center items-center gap-4">
-              <img className="rounded-xl w-full" src={clickedImg} alt="" />
-              <div className="flex md:justify-between justify-center px-6 gap-4 w-full">
+              <img
+                className="rounded-xl w-full m-4 lg:w-5/6"
+                src={clickedImg}
+                alt=""
+              />
+              <div className="flex md:justify-center justify-center px-6 gap-4 w-full">
                 <img
-                  className="rounded-xl lg:w-24 md:w-12 w-16 cursor-pointer"
+                  className="rounded-xl  cursor-pointer w-20"
                   onClick={() => imgClicked(1)} // Wrap in an arrow function
                   src={product.img}
                   alt=""
                 />
                 <img
-                  className="rounded-xl lg:w-24 md:w-12 w-16 cursor-pointer"
+                  className="rounded-xl  cursor-pointer w-20"
                   onClick={() => imgClicked(2)} // Wrap in an arrow function
                   src="https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
                   alt=""
                 />
                 <img
-                  className="rounded-xl lg:w-24 md:w-12 w-16 cursor-pointer"
+                  className="rounded-xl  cursor-pointer w-20"
                   onClick={() => imgClicked(3)} // Wrap in an arrow function
                   src="https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
                   alt=""
                 />
                 <img
-                  className="rounded-xl lg:w-24 md:w-12 w-16 cursor-pointer"
+                  className="rounded-xl  cursor-pointer w-20"
                   onClick={() => imgClicked(4)} // Wrap in an arrow function
                   src="https://images.pexels.com/photos/26653530/pexels-photo-26653530/free-photo-of-rhume-froid-neige-paysage.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
                   alt=""
@@ -483,8 +463,8 @@ const SingleProduct = () => {
             {product.description}
           </p>
           <div className="flex justify-center items-center gap-8">
-            <img className="w-1/3" src={product.imgdesc1} alt="" />
-            <img className="w-1/3" src={product.imgdesc2} alt="" />
+            <img className="w-1/2" src={product.imgdesc1} alt="" />
+            <img className="w-1/2" src={product.imgdesc2} alt="" />
           </div>
         </div>
       </section>
