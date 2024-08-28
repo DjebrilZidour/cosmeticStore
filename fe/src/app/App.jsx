@@ -18,7 +18,7 @@ function App() {
         <div className="font-serif gap-8 mx-4 flex flex-col-reverse items-center justify-center lg:flex-row">
           <div className="flex flex-col items-center justify-center gap-8 my-4 p-4 w-full lg:items-start lg:w-1/2">
             <h1 className="text-3xl capitalize lg:w-full ">
-              salam 3likoooom !!!
+              salam 3likoooom  marhba !!!
             </h1>
             <p className="text-sky-600 text-lg capitalize w-full text-center lg:text-left text-purple-700">
               marhba bik end djazirat el marra une boutique algeriene online
