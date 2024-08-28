@@ -6,6 +6,7 @@ import wilayas from "./utils/wilayas";
 import { useLocation } from "react-router-dom";
 import shippingPrices from "./utils/shippingPrices";
 import { useEffect } from "react";
+
 const products = [
   {
     id: 1,
@@ -147,6 +148,8 @@ const products = [
     link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/the-ordinary-niacinamide-10-zinc-1",
   },
 ];
+// Make sure to import animate.css
+
 const ScrollButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -161,7 +164,7 @@ const ScrollButton = () => {
 
   useEffect(() => {
     // Add event listener for scroll
-    window.addEventListener("sc roll", toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility);
 
     // Clean up the event listener on component unmount
     return () => {
@@ -171,14 +174,15 @@ const ScrollButton = () => {
 
   return (
     isVisible && (
-      <div className="fixed bottom-8 right-8 w-full">
-        <button className="fixed inset-x-0 bottom-0 bg-pink-400 text-white font-semibold py-2 rounded-lg hover:bg-pink-500 transition duration-300 m-4 text-white text-2xl animate__animated animate__bounce animate__infinite">
-          Commander
-        </button>
-      </div>
+     
+      <button className="fixed inset-x-0 bottom-0 bg-pink-400 text-white font-semibold py-2 rounded-lg hover:bg-pink-500 transition duration-300 m-4 text-white text-2xl  animate__animated animate__bounce animate__infinite">
+        Commander
+      </button>
+   
     )
   );
 };
+
 const SingleProduct = () => {
   const { id } = useParams();
   const product = products.find((p) => p.id === parseInt(id));
@@ -267,7 +271,7 @@ const SingleProduct = () => {
 
       <section
         id="buy"
-        className="flex flex-col-reverse md:flex-row w-full md:px-24 my-12 lg:mx-12 justify-center items-center"
+        className="flex flex-col-reverse md:flex-row w-full md:px-24 my-12  justify-center items-center"
       >
         <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0 md:p-4 md:text-start text-center flex flex-col justify-center items-centemd:items-start">
           <h1 className="md:text-3xl font-bold text-gray-800 text-3xl p-4">
@@ -396,8 +400,8 @@ const SingleProduct = () => {
 
             {/* Order Summary */}
             <div className="mt-8 p-4 rounded-lg bg-pink-100">
-              <h2 className="text-xl font-semibold text-gray-800">
-                Order Summary
+              <h2 className="text-xl font-semibold text-gray-800 text-center">
+              ملخص الطلب
               </h2>
               <div className="mt-2">
                 <div className="flex justify-between">
