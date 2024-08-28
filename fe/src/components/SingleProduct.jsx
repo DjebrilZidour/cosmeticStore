@@ -161,7 +161,7 @@ const ScrollButton = () => {
 
   useEffect(() => {
     // Add event listener for scroll
-    window.addEventListener("scroll", toggleVisibility);
+    window.addEventListener("sc roll", toggleVisibility);
 
     // Clean up the event listener on component unmount
     return () => {
