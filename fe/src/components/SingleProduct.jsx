@@ -235,12 +235,12 @@ const SingleProduct = () => {
       <section className="flex flex-col-reverse md:flex-row w-full md:px-16">
         <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0 md:p-12 md:text-start text-center flex flex-col justify-center items-centemd:items-start">
           <h1 className="text-4xl font-bold text-gray-800">{product.title}</h1>
-          <p className="mt-4 text-gray-600 text-xl p-2">{product.desc}</p>
-          <div className="mt-2 flex flex-col justify-center md:items-start">
-            <h3 className="text-red-500 line-through text-3xl">
+          <p className="mt-4 text-gray-600 text-xl p-2 text-right">{product.desc}</p>
+          <div className="mt-2 flex flex-col justify-center md:items-end my-2">
+            <h3 className="text-red-500 line-through text-2xl text-right">
               {checkOldPrice(product.oldPrice)}
             </h3>
-            <h2 className="text-green-500 ml-2 text-5xl font-bold">
+            <h2 className="text-green-500 ml-2 text-4xl font-bold text-right">
               {product.price} دج
             </h2>
           </div>
