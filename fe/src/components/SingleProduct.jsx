@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import wilayas from "./utils/wilayas";
 import { useLocation } from "react-router-dom";
 import shippingPrices from "./utils/shippingPrices";
-
+import { useEffect } from "react";
 const products = [
   {
     id: 1,
@@ -147,7 +147,38 @@ const products = [
     link: "https://djazirat-elmarra.shop.maystro-delivery.com/djazirat-elmarra/the-ordinary-niacinamide-10-zinc-1",
   },
 ];
+const ScrollButton = () => {
+  const [isVisible, setIsVisible] = useState(false);
 
+  const toggleVisibility = () => {
+    // Check if the user has scrolled more than the height of the hero section (e.g., 600px)
+    if (window.scrollY > 600) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    // Add event listener for scroll
+    window.addEventListener("scroll", toggleVisibility);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+    };
+  }, []);
+
+  return (
+    isVisible && (
+      <div className="fixed bottom-8 right-8 w-full">
+        <button className="fixed inset-x-0 bottom-0 bg-pink-400 text-white font-semibold py-2 rounded-lg hover:bg-pink-500 transition duration-300 m-4 text-white text-2xl animate__animated animate__bounce animate__infinite">
+          Commander
+        </button>
+      </div>
+    )
+  );
+};
 const SingleProduct = () => {
   const { id } = useParams();
   const product = products.find((p) => p.id === parseInt(id));
@@ -165,6 +196,7 @@ const SingleProduct = () => {
   });
   const [shippingPrice, setShippingPrice] = useState(0);
   const [clickedImg, setClickedImg] = useState(product.img);
+
   const handleWilayaChange = (e) => {
     const wilayaId = e.target.value;
     console.log(wilayaId);
@@ -228,14 +260,22 @@ const SingleProduct = () => {
       return;
     }
   };
+
   return (
     <>
       <Navbar />
 
-      <section className="flex flex-col-reverse md:flex-row w-full md:px-16">
-        <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0 md:p-12 md:text-start text-center flex flex-col justify-center items-centemd:items-start">
-          <h1 className="text-4xl font-bold text-gray-800">{product.title}</h1>
-          <p className="mt-4 text-gray-600 text-xl p-2 text-right">{product.desc}</p>
+      <section
+        id="buy"
+        className="flex flex-col-reverse md:flex-row w-full md:px-32 my-12"
+      >
+        <div className="md:w-1/2 md:pl-8 mt-4 md:mt-0 md:p-4 md:text-start text-center flex flex-col justify-center items-centemd:items-start">
+          <h1 className="md:text-3xl font-bold text-gray-800 text-3xl p-4">
+            {product.title}
+          </h1>
+          <p className="mt-4 text-gray-600 text-lg p-2 text-right">
+            {product.desc}
+          </p>
           <div className="mt-2 flex flex-col justify-center md:items-end my-2">
             <h3 className="text-red-500 line-through text-2xl text-right">
               {checkOldPrice(product.oldPrice)}
@@ -247,8 +287,9 @@ const SingleProduct = () => {
 
           {/* Options (if any) */}
 
-          <form id="buy" onSubmit={handleSubmit} className="mt-2 md:p-0 px-4">
+          <form onSubmit={handleSubmit} className="mt-2 md:p-0 px-4">
             <div className="flex flex-col gap-4">
+              {/* Quantity Field (Optional) */}
               <div className="flex flex-col justify-center items-end">
                 <label
                   className="block text-gray-700 font-semibold mb-2"
@@ -266,7 +307,10 @@ const SingleProduct = () => {
                   min="1"
                 />
               </div>
+
+              {/* Phone Number and Full Name Fields (Required) */}
               <div className="flex justify-center items-center gap-4">
+                {/* Phone Number Field */}
                 <div className="text-right w-1/2">
                   <label
                     className="block text-gray-700 font-semibold mb-2"
@@ -279,13 +323,15 @@ const SingleProduct = () => {
                     id="phoneNumber"
                     name="phoneNumber"
                     pattern="^ *(0|\+ *2 *1 *3) *((5|6|7) *(\d *){8}|(4 *9|2 *7|2 *9|3 *2|3 *3|3 *4|2 *5|2 *6|3 *7|4 *3|4 *6|2 *1|2 *3|3 *6|4 *8|3 *8|3 *1|4 *5|3 *5|4 *1|2 *4) *(\d *){6}) *$"
-                    className="w-full px-4 py-2 border border-pink-500  rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 text-right text-2xl"
+                    className="w-full px-4 py-2 border border-pink-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 text-right text-lg  md:text-2xl"
                     placeholder="رقم الهاتف"
                     value={formData.phoneNumber}
                     onChange={handleInputChange}
                     required
                   />
                 </div>
+
+                {/* Full Name Field */}
                 <div className="text-right w-1/2">
                   <label
                     className="block text-gray-700 font-semibold mb-2"
@@ -297,7 +343,7 @@ const SingleProduct = () => {
                     type="text"
                     id="fullName"
                     name="fullName"
-                    className="w-full px-4 py-2 border border-pink-500  rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 text-right text-2xl"
+                    className="w-full px-4 py-2 border border-pink-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 text-right text-lg  md:text-2xl"
                     placeholder="الاسم واللقب"
                     value={formData.fullName}
                     onChange={handleInputChange}
@@ -306,7 +352,38 @@ const SingleProduct = () => {
                 </div>
               </div>
 
+              {/* Wilaya and Commune Fields (Required) */}
               <div className="flex justify-center items-center gap-4">
+                {/* Commune Field */}
+                {communes.length >= 0 && (
+                  <div className="w-1/2 text-right">
+                    <label
+                      className="block text-gray-700 font-semibold mb-2"
+                      htmlFor="commune"
+                    >
+                      البلدية
+                    </label>
+                    <select
+                      id="commune"
+                      name="commune"
+                      className="w-full px-4 py-2 border border-pink-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 text-right text-lg  md:text-2xl"
+                      value={formData.commune}
+                      onChange={handleInputChange}
+                      required
+                    >
+                      <option value="" disabled selected>
+                        إختر البلدية
+                      </option>
+                      {communes.map((commune, index) => (
+                        <option key={index} value={commune}>
+                          {commune}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                )}
+
+                {/* Wilaya Field */}
                 <div className="w-1/2 text-right">
                   <label
                     className="block text-gray-700 font-semibold mb-2"
@@ -317,7 +394,7 @@ const SingleProduct = () => {
                   <select
                     id="wilaya"
                     name="wilaya"
-                    className="w-full px-4 py-2 border border-pink-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 text-right text-2xl"
+                    className="w-full px-4 py-2 border border-pink-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 text-right text-lg  md:text-2xl"
                     value={selectedWilaya}
                     onChange={handleWilayaChange}
                     required
@@ -332,45 +409,18 @@ const SingleProduct = () => {
                     ))}
                   </select>
                 </div>
-
-                {communes.length >= 0 && (
-                  <div className="w-1/2 text-right">
-                    <label
-                      className="block text-gray-700 font-semibold mb-2"
-                      htmlFor="commune"
-                    >
-                      البلدية
-                    </label>
-                    <select
-                      id="commune"
-                      name="commune"
-                      className="w-full px-4 py-2 border border-pink-500  rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500 text-right text-2xl"
-                      value={formData.commune}
-                      onChange={handleInputChange}
-                      required
-                    >
-                      <option value="1" disabled selected>
-                        البلدية
-                      </option>
-                      {communes.map((commune, index) => (
-                        <option key={index} value={commune}>
-                          {commune}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                )}
               </div>
 
+              {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-pink-400 text-white font-semibold py-2 rounded-lg hover:bg-pink-500 transition duration-300"
-                onClick={handleSubmit}
+                className="w-full bg-pink-400 text-white font-semibold py-2 rounded-lg hover:bg-pink-500 transition duration-300 "
               >
                 Commander Maintenant
               </button>
             </div>
 
+            {/* Order Summary */}
             <div className="mt-8 p-4 rounded-lg bg-pink-100">
               <h2 className="text-xl font-semibold text-gray-800">
                 Order Summary
@@ -392,7 +442,7 @@ const SingleProduct = () => {
             </div>
           </form>
         </div>
-        <div className="md:w-1/2 md:p-16 p-4">
+        <div className="md:w-1/2 md:p-4 p-4">
           <div className=" flex flex-col gap-4">
             <div className="flex flex-col justify-center items-center gap-4">
               <img className="rounded-xl w-full" src={clickedImg} alt="" />
@@ -438,10 +488,9 @@ const SingleProduct = () => {
           </div>
         </div>
       </section>
+
       <Link to="buy" spy={true} smooth={true} offset={50} duration={500}>
-        <button className="fixed inset-x-0 bottom-0  bg-pink-100 text-white font-semibold py-2 rounded-lg hover:bg-pink-800 transition duration-300 m-4 text-pink-500 hover:text-white">
-          commander
-        </button>
+        <ScrollButton />
       </Link>
     </>
   );
