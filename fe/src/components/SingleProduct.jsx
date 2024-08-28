@@ -273,10 +273,8 @@ const SingleProduct = () => {
           <h1 className="md:text-3xl font-bold text-gray-800 text-3xl p-4">
             {product.title}
           </h1>
-          <p className="mt-4 text-gray-600 text-lg p-2 text-right">
-            {product.desc}
-          </p>
-          <div className="mt-2 flex flex-col justify-center md:items-end my-2">
+        
+          <div className="mt-2 flex flex-col justify-center md:items-end items-center my-2">
             <h3 className="text-red-500 line-through text-2xl text-right">
               {checkOldPrice(product.oldPrice)}
             </h3>
@@ -459,6 +457,9 @@ const SingleProduct = () => {
       <section className="md:px-24 px-6 mb-12 my-12 mb-36">
         <div className="flex flex-col justify-center items-end gap-8  ">
           <h1 className="md:text-5xl text-4xl">وصف المنتج</h1>
+          <p className="mt-4 text-gray-600 text-lg p-2 text-right">
+            {product.desc}
+          </p>
           <p className="md:text-2xl text-xl w-full text-end">
             {product.description}
           </p>
