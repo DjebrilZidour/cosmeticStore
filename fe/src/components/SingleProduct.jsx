@@ -218,8 +218,10 @@ const SingleProduct = () => {
     setCommunes(wilaya ? wilaya.communes : []);
     const wilayaName = wilaya ? wilaya.name : "";
     const totals = product.price * quantity + shippingPrice
-    setFormData({ ...formData, wilaya: wilayaName, commune: "" , total:totals, shippingPrice:shippingPrice,});
+    console.log(totals);
+    console.log(shippingPrice);
     setShippingPrice(shippingPrices[wilayaName] || 0); // Set shipping price based on selected wilaya
+    setFormData({ ...formData, wilaya: wilayaName, commune: "" , total:totals, shippingPrice:shippingPrice,});
   };
 
   const handleInputChange = (e) => {
