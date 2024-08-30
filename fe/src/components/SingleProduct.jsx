@@ -197,22 +197,18 @@ const SingleProduct = () => {
   const [clickedProduct, setClickedProduct] = useState("");
   const [shippingPrice, setShippingPrice] = useState(0);
   const [clickedImg, setClickedImg] = useState(product.img);
- 
-  const handleQuantityChange = (e) => {
-    setQuantity(e.target.value);
-  };
-  
+
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
     wilaya: "",
     commune: "",
     price: product.price,
-    shippingPrice: shippingPriceoffi(),
-    total: product.price * quantity + shippingPrice,
+    shippingPrice: "",
+    total: "",
     product: product.title,
   });
-
+ 
   const handleWilayaChange = (e) => {
     const wilayaId = e.target.value;
     console.log(wilayaId);
@@ -221,20 +217,20 @@ const SingleProduct = () => {
     setSelectedWilaya(wilayaId);
     setCommunes(wilaya ? wilaya.communes : []);
     const wilayaName = wilaya ? wilaya.name : "";
-    setFormData({ ...formData, wilaya: wilayaName, commune: "" });
-
+    const totals = product.price * quantity + shippingPrice
+    setFormData({ ...formData, wilaya: wilayaName, commune: "" , total:totals, shippingPrice:shippingPrice,});
     setShippingPrice(shippingPrices[wilayaName] || 0); // Set shipping price based on selected wilaya
   };
-  const shippingPriceoffi=()=>{
-    return shippingPrice
-  }
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  const handleQuantityChange = (e) => {
+    setQuantity(e.target.value);
+  };
   const navigate = useNavigate();
-  
   const handleSubmit = (e) => {
     setClickedProduct(product.title);
     e.preventDefault();
