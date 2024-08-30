@@ -186,6 +186,10 @@ const ScrollButton = () => {
 const SingleProduct = () => {
   const { id } = useParams();
   const product = products.find((p) => p.id === parseInt(id));
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
 
   const [quantity, setQuantity] = useState(1);
   const [selectedWilaya, setSelectedWilaya] = useState("");

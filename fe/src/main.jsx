@@ -42,14 +42,7 @@ const products = [
 ];
 
 // Function to create product-specific paths
-const pathCreator = (id, title) => `/${id}`;
 
-// Dynamically creating routes for each product
-const productRoutes = products.map((product) => ({
-  path: pathCreator(product.id, product.title),
-  element: <SingleProduct  />,
-  loader: () => ({ productId: product.id }),
-}));
 
 // Router configuration
 const router = createBrowserRouter([
