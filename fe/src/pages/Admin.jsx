@@ -49,7 +49,11 @@ const Admin = () => {
               <th className="py-3 px-6 text-left">Phone</th>
               <th className="py-3 px-6 text-left">Product</th>
               <th className="py-3 px-6 text-left">Wilaya</th>
+              <th className="py-3 px-6 text-left">Price</th>
+              <th className="py-3 px-6 text-left">Shipping Price</th>
               <th className="py-3 px-6 text-left">Order Time</th>
+              <th className="py-3 px-6 text-left">total</th>
+              
             </tr>
           </thead>
           <tbody className="text-gray-700 text-sm">
@@ -59,7 +63,10 @@ const Admin = () => {
                 <td className="py-3 px-6 text-left">{command.phone}</td>
                 <td className="py-3 px-6 text-left">{command.product}</td>
                 <td className="py-3 px-6 text-left">{command.wilaya}</td>
+                <td className="py-3 px-6 text-left">{command.price} DA</td>
+                <td className="py-3 px-6 text-left">{command.shippingPrice} DA</td>
                 <td className="py-3 px-6 text-left">{command.orderTime}</td>
+                <td className="py-3 px-6 text-left">{command.total} DA</td>
               </tr>
             ))}
           </tbody>

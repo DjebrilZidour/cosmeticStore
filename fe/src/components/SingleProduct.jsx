@@ -189,12 +189,15 @@ const SingleProduct = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  const total = product.price * quantity + shippingPrice
+  
  
   const [quantity, setQuantity] = useState(1);
   const [selectedWilaya, setSelectedWilaya] = useState("");
   const [communes, setCommunes] = useState([]);
   const [clickedProduct, setClickedProduct] = useState("");
+  const [shippingPrice, setShippingPrice] = useState(0);
+  const [clickedImg, setClickedImg] = useState(product.img);
+
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
@@ -202,12 +205,10 @@ const SingleProduct = () => {
     commune: "",
     price: product.price,
     shippingPrice: shippingPrice,
-    total: total,
+    total: product.price * quantity + shippingPrice,
     product: product.title,
   });
-  const [shippingPrice, setShippingPrice] = useState(0);
-  const [clickedImg, setClickedImg] = useState(product.img);
-
+ 
   const handleWilayaChange = (e) => {
     const wilayaId = e.target.value;
     console.log(wilayaId);
