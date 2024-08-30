@@ -1,70 +1,72 @@
-import React, { useState } from "react";
-import {  useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Admin = (props) => {
+const Admin = () => {
   const navigate = useNavigate();
-  const LOCAL_STORAGE_KEYS = {
-  isLogged: "isUserLoggedIn",
-};
-
-const getIsUserLogged = () => {
-  const isUserLogged =  JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYS.isLogged));
-  if (typeof isUserLogged === "boolean") {
-    return isUserLogged
-  } else {
-    return false
-  }
-};
-
-const isUserLogged = getIsUserLogged()
-
-if (!isUserLogged) {
-  navigate("/admin-verification")
-}
-
   
-    const [myCommands, setMyCommands] = useState([]);
-    const getCommands = () => {
-        fetch("https://cosmeticstore-2ijr.onrender.com/product", {
-          method: "GET",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-        }).then((response) =>
-          response.json().then((responseData) => setMyCommands(responseData.data))
-        );
-      };
-    getCommands()
-    
-    return(<>
-      <section style={{display:props.state?"block":"hidden"}}>
-              <h1 className="text-5xl text-green-500">Welcome Back Djebril</h1>
-             
-              {myCommands.map((command, index) => {
-            return (
-              <>
-              <div
-                key={index}
-                className="my-4 py-4 border-2 border-blue-500 w-3/5 mx-auto rounded-xl"
-              >
-                <p>produit : {command.product}</p>
-                <p>name : {command.name} </p>
-                <p>phone : {command.phone} </p>
-                <p>wilaya : {command.wilaya} </p>
-                <p>time : {command.orderTime} </p>
-              </div>
-              </>
-            );
-          })}
-          </section>
-          <button></button>
-      </>
-         
-          
-      )
-   
-   
+  const LOCAL_STORAGE_KEYS = {
+    isLogged: "isUserLoggedIn",
+  };
+
+  const getIsUserLogged = () => {
+    const isUserLogged = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEYS.isLogged));
+    return typeof isUserLogged === "boolean" ? isUserLogged : false;
+  };
+
+  const isUserLogged = getIsUserLogged();
+
+  if (!isUserLogged) {
+    navigate("/admin-verification");
+  }
+
+  const [myCommands, setMyCommands] = useState([]);
+
+  useEffect(() => {
+    const getCommands = async () => {
+      const response = await fetch("https://cosmeticstore-2ijr.onrender.com/product", {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
+      const responseData = await response.json();
+      setMyCommands(responseData.data);
+    };
+
+    getCommands();
+  }, []);
+
+  return (
+    <div className="p-6 bg-gray-100 min-h-screen">
+      <h1 className="text-4xl font-bold text-center text-green-600 mb-8">Client Orders</h1>
+      
+      <div className="overflow-x-auto">
+        <table className="min-w-full bg-white border border-gray-300">
+          <thead>
+            <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+              <th className="py-3 px-6 text-left">Name</th>
+              <th className="py-3 px-6 text-left">Phone</th>
+              <th className="py-3 px-6 text-left">Product</th>
+              <th className="py-3 px-6 text-left">Wilaya</th>
+              <th className="py-3 px-6 text-left">Order Time</th>
+            </tr>
+          </thead>
+          <tbody className="text-gray-700 text-sm">
+            {myCommands.map((command, index) => (
+              <tr key={index} className="border-b border-gray-200 hover:bg-gray-100">
+                <td className="py-3 px-6 text-left whitespace-nowrap">{command.name}</td>
+                <td className="py-3 px-6 text-left">{command.phone}</td>
+                <td className="py-3 px-6 text-left">{command.product}</td>
+                <td className="py-3 px-6 text-left">{command.wilaya}</td>
+                <td className="py-3 px-6 text-left">{command.orderTime}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
 };
-export default Admin
+
+export default Admin;

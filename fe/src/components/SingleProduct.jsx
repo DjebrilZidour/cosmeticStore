@@ -189,8 +189,8 @@ const SingleProduct = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-
+  const total = product.price * quantity + shippingPrice
+ 
   const [quantity, setQuantity] = useState(1);
   const [selectedWilaya, setSelectedWilaya] = useState("");
   const [communes, setCommunes] = useState([]);
@@ -200,6 +200,9 @@ const SingleProduct = () => {
     phoneNumber: "",
     wilaya: "",
     commune: "",
+    price: product.price,
+    shippingPrice: shippingPrice,
+    total: total,
     product: product.title,
   });
   const [shippingPrice, setShippingPrice] = useState(0);
