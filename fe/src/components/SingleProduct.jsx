@@ -215,18 +215,20 @@ const SingleProduct = () => {
   };
  
   const handleWilayaChange = (e) => {
+    setShippingPrice(0)
     const wilayaId = e.target.value;
-    console.log(wilayaId);
+
     const wilaya = wilayas.find((w) => w.id === parseInt(wilayaId));
-    console.log(wilaya);
+ 
     setSelectedWilaya(wilayaId);
     setCommunes(wilaya ? wilaya.communes : []);
     const wilayaName = wilaya ? wilaya.name : "";
     const totals = product.price * quantity + shippingPrice
-    console.log(totals);
+ 
     setShippingPrice(shippingPrices[wilayaName] || 0); // Set shipping price based on selected wilaya
-    console.log("rhis is it ",hippingPrice);
+    console.log("rhis is it ",shippingPrice);
     setFormData({ ...formData, wilaya: wilayaName, commune: "" , total:totals, shipping:shippingPrice,qte:quantity});
+    console.log(formData);
   };
 
   const handleInputChange = (e) => {

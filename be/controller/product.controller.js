@@ -1,6 +1,7 @@
 const fs = require("fs");
-
+const useState = require()
 const path = "data.json";
+const shippingPrices = require("../shippingPrices")
 
 function getCurrentFormattedDateTime() {
   const now = new Date();
