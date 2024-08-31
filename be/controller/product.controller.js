@@ -23,14 +23,15 @@ const createCommand = (req, res) => {
         "data.json",
         JSON.stringify([
           {
-            product:req.body.product,
+            product: req.body.product,
             name: req.body.fullName,
             phone: req.body.phoneNumber,
             wilaya: req.body.wilaya,
             commune: req.body.commune,
             price: req.body.price,
-            shippingPrice: req.body.shippingPrice,
+            shippingPrice: req.body.shipping,
             total: req.body.total,
+            qte: req.body.qte,
             orderTime: getCurrentFormattedDateTime(),
           },
         ]),
@@ -42,15 +43,15 @@ const createCommand = (req, res) => {
       const data = fs.readFileSync("data.json", "utf8"); // <= JSON
       const parsedData = JSON.parse(data); // list
       parsedData.push({
-       
-        product:req.body.product,
+        product: req.body.product,
         name: req.body.fullName,
         phone: req.body.phoneNumber,
         wilaya: req.body.wilaya,
         commune: req.body.commune,
         price: req.body.price,
-        shippingPrice: req.body.shippingPrice,
+        shippingPrice: req.body.shipping,
         total: req.body.total,
+        qte: req.body.qte,
         orderTime: getCurrentFormattedDateTime(),
       });
       // after add the last command
