@@ -48,6 +48,7 @@ const Admin = () => {
               <th className="py-3 px-6 text-left">Name</th>
               <th className="py-3 px-6 text-left">Phone</th>
               <th className="py-3 px-6 text-left">Product</th>
+              <th className="py-3 px-6 text-left">Qte</th>
               <th className="py-3 px-6 text-left">Wilaya</th>
               <th className="py-3 px-6 text-left">Commune</th>
               <th className="py-3 px-6 text-left">Price</th>
