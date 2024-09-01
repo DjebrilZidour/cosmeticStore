@@ -226,7 +226,7 @@ const SingleProduct = () => {
     const totals = product.price * quantity + shippingPrice
  
     setShippingPrice(shippingPrices[wilayaName] || 0); // Set shipping price based on selected wilaya
-    console.log("rhis is it ",shippingPrice);
+    console.log("rhis is it ",shippingPrices[wilayaName]);
     setFormData({ ...formData, wilaya: wilayaName, commune: "" , total:totals, shipping: shippingPrices[wilayaName] ,qte:quantity});
     console.log(formData);
   };
