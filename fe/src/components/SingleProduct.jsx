@@ -210,9 +210,6 @@ const SingleProduct = () => {
     qte:"",
   });
 
-  const handleQuantityChange = (e) => {
-    setQuantity(e.target.value);
-  };
  
   const handleWilayaChange = (e) => {
     setShippingPrice(0)
@@ -227,15 +224,20 @@ const SingleProduct = () => {
  
     setShippingPrice(shippingPrices[wilayaName] || 0); // Set shipping price based on selected wilaya
     console.log("rhis is it ",shippingPrices[wilayaName]);
-    setFormData({ ...formData, wilaya: wilayaName, commune: "" , total:totals, shipping: shippingPrices[wilayaName] ,qte:quantity});
+    setFormData({ ...formData, wilaya: wilayaName, commune: "" , total:totals, shipping: shippingPrices[wilayaName] });
     console.log(formData);
+  };
+
+  const handleQuantityChange = (e) => {
+    setQuantity(e.target.value);
+    setFormData({...formData, qte:e.target.value})
+
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     setClickedProduct(product.title);
