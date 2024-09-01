@@ -86,10 +86,10 @@ const Admin = () => {
                 <td className="py-3 px-2 text-left">{command.orderTime}</td>
                 <td className="py-3 px-2 text-left">{command.price * command.qte + command.shippingPrice} DA</td>
                 <td className="flex justify-center items-center gap-4 bg-red-100">
-                  {" "}
+                  {/* {" "}
                   <button>approuve </button>
                   <button>recall</button>
-                  <button>cancel</button>
+                  <button>cancel</button> */}
                 </td>
               </tr>
             ))}
