@@ -207,10 +207,16 @@ const SingleProduct = () => {
     shipping: "",
     total: "",
     product: product.title,
-    qte:"",
+    qte: "",
   });
 
- 
+  const handleQuantityChange = (e) => {
+    setQuantity(e.target.value)
+   
+    
+   
+  };
+
   const handleWilayaChange = (e) => {
     setShippingPrice(0)
     const wilayaId = e.target.value;
@@ -224,15 +230,12 @@ const SingleProduct = () => {
  
     setShippingPrice(shippingPrices[wilayaName] || 0); // Set shipping price based on selected wilaya
     console.log("rhis is it ",shippingPrices[wilayaName]);
-    setFormData({ ...formData, wilaya: wilayaName, commune: "" , total:totals, shipping: shippingPrices[wilayaName] });
-    console.log(formData);
+    setFormData({ ...formData, wilaya: wilayaName, commune: "" , total:totals, shipping: shippingPrices[wilayaName], qte:quantity});
+    console.log("this is form after ",formData);
+    
   };
 
-  const handleQuantityChange = (e) => {
-    setQuantity(e.target.value);
-    setFormData({...formData, qte:e.target.value})
-
-  };
+  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -272,7 +275,7 @@ const SingleProduct = () => {
     }
   };
 
-  console.log(product.price);
+
   const checkOldPrice = (price) => {
     if (price) {
       return <p>{price} دج</p>;

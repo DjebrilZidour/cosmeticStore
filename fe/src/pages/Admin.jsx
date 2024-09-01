@@ -45,32 +45,32 @@ const Admin = () => {
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
             <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-              <th className="py-3 px-6 text-left">Name</th>
-              <th className="py-3 px-6 text-left">Phone</th>
-              <th className="py-3 px-6 text-left">Product</th>
-              <th className="py-3 px-6 text-left">Qte</th>
-              <th className="py-3 px-6 text-left">Wilaya</th>
-              <th className="py-3 px-6 text-left">Commune</th>
-              <th className="py-3 px-6 text-left">Price</th>
-              <th className="py-3 px-6 text-left">Shipping Price</th>
-              <th className="py-3 px-6 text-left">Order Time</th>
-              <th className="py-3 px-6 text-left">total</th>
+              <th className="py-3 px-2 text-left">Name</th>
+              <th className="py-3 px-2 text-left">Phone</th>
+              <th className="py-3 px-2 text-left">Product</th>
+              <th className="py-3 px-2 text-left">Qte</th>
+              <th className="py-3 px-2 text-left">Wilaya</th>
+              <th className="py-3 px-2 text-left">Commune</th>
+              <th className="py-3 px-2 text-left">Price</th>
+              <th className="py-3 px-2 text-left">Shipping Price</th>
+              <th className="py-3 px-2 text-left">Order Time</th>
+              <th className="py-3 px-2 text-left">total</th>
               
             </tr>
           </thead>
           <tbody className="text-gray-700 text-sm">
             {myCommands.map((command, index) => (
               <tr key={index} className="border-b border-gray-200 hover:bg-gray-100">
-                <td className="py-3 px-6 text-left whitespace-nowrap">{command.name}</td>
-                <td className="py-3 px-6 text-left">{command.phone}</td>
-                <td className="py-3 px-6 text-left">{command.product}</td>
-                <td className="py-3 px-6 text-left">{command.qte}</td>
-                <td className="py-3 px-6 text-left">{command.wilaya}</td>
-                <td className="py-3 px-6 text-left">{command.commune}</td>
-                <td className="py-3 px-6 text-left">{command.price} DA</td>
-                <td className="py-3 px-6 text-left">{command.shippingPrice} DA</td>
-                <td className="py-3 px-6 text-left">{command.orderTime}</td>
-                <td className="py-3 px-6 text-left">{command.total} DA</td>
+                <td className="py-3 px-2 text-left whitespace-nowrap">{command.name}</td>
+                <td className="py-3 px-2 text-left">{command.phone}</td>
+                <td className="py-3 px-2 text-left">{command.product}</td>
+                <td className="py-3 px-2 text-left">{command.qte}</td>
+                <td className="py-3 px-2 text-left">{command.wilaya}</td>
+                <td className="py-3 px-2 text-left">{command.commune}</td>
+                <td className="py-3 px-2 text-left">{command.price} DA</td>
+                <td className="py-3 px-2 text-left">{command.shippingPrice} DA</td>
+                <td className="py-3 px-2 text-left">{command.orderTime}</td>
+                <td className="py-3 px-2 text-left">{command.total} DA</td>
               </tr>
             ))}
           </tbody>
